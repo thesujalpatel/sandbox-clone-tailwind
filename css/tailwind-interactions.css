@@ -1,0 +1,83 @@
+/* Interactive styles that need JavaScript support */
+
+/* Team info card social icon wrapper */
+.team-info-card-social-icon-wrapper {
+  @apply flex justify-center items-center bg-primary hover:bg-dark p-[5px] rounded-full w-[30px] h-[30px] transition-colors duration-300;
+}
+
+/* Dropdown content animations */
+.dropdown-content {
+  @apply opacity-0 mt-0 max-h-0 overflow-hidden transition-all duration-300 ease-in-out;
+}
+
+.dropdown-active .dropdown-content {
+  @apply opacity-100 mt-[15px] max-h-[200px];
+}
+
+/* FAQ answer initial state */
+.faq-answer {
+  @apply opacity-0 mt-0 max-h-0 overflow-hidden transition-all duration-300 ease-in-out;
+}
+
+/* FAQ card active state */
+.faq-card.active .faq-answer {
+  @apply opacity-100 mt-[15px] max-h-[200px];
+}
+
+.faq-card.active .faq-card-icon {
+  @apply rotate-180;
+}
+
+/* Choose us detail active states */
+.choose-us-detail.dropdown-active .choose-us-detail-label {
+  @apply border-b-primary text-primary;
+}
+
+.choose-us-detail:not(.dropdown-active) .choose-us-detail-content {
+  @apply opacity-0 mt-0 max-h-0 overflow-hidden;
+}
+
+.choose-us-detail.dropdown-active .choose-us-detail-content {
+  @apply opacity-100 mt-[15px] max-h-[200px];
+}
+
+.choose-us-detail:not(.dropdown-active) .choose-us-icon {
+  @apply rotate-0;
+}
+
+/* Project carousel responsive flex basis adjustments */
+@media (max-width: 640px) {
+  .project-carousel > div {
+    flex-basis: 100% !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .project-carousel > div {
+    flex-basis: 48% !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .project-carousel > div {
+    flex-basis: 49% !important;
+  }
+}
+
+/* Mobile navigation visibility */
+.mobile-nav-hidden {
+  @apply opacity-0 max-h-0 overflow-hidden;
+}
+
+.mobile-nav-visible {
+  @apply opacity-100 max-h-[500px];
+}
+
+/* Navigation dropdown animations */
+.nav-dropdown-content {
+  @apply top-full left-0 absolute bg-white opacity-0 shadow-card py-2 rounded-lg min-w-[200px] max-h-0 overflow-hidden transition-all duration-300 ease-in-out;
+}
+
+.nav-dropdown:hover .nav-dropdown-content {
+  @apply opacity-100 max-h-[300px];
+}
