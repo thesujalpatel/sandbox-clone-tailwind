@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sandbox</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Google Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu,star_rate"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Tailwind CSS Initialization -->
+    <style type="text/tailwindcss">
+      @theme {
+        /* Main colors */
+        --color-primary: var(--primary);
+        --color-light-primary: var(--light-primary);
+        --color-light: var(--light);
+        --color-light-secondary: var(--light-secondary);
+        --color-dark: var(--dark);
+        --color-dark-secondary: var(--dark-secondary);
+        --color-dark-tertiary: var(--dark-tertiary);
+        --color-white: var(--white);
+        --color-black: var(--black);
+
+        --color-golden: var(--golden);
+
+        /* Gradient */
+        --color-primary-gradient: var(--primary-gradient);
+        --color-secondary-gradient: var(--secondary-gradient);
+
+        /* Box shadow */
+        --color-shadow: var(--shadow);
+        --color-shadow-hover: var(--shadow-hover);
+
+        /* Fonts */
+        --font-urbanist: var(--font-urbanist);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Navigation Bar -->
+      <nav class="nav-section">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="#" class="nav-logo-wrapper nav-left">
+              <img
+                src="assets/images/logo.png"
+                alt="Navigation Logo"
+                class="nav-logo"
+              />
+            </a>
+            <div class="nav-right">
+              <div class="nav-options">
+                <div href="#" class="nav-option">
+                  <div class="nav-option-lable">Demos</div>
+                  <div class="nav-option-icon-wrapper">
+                    <img
+                      src="assets/svg/dropdown.svg"
+                      alt="Dropdown Icon"
+                      class="dropdown-icon"
+                    />
+                  </div>
+                </div>
+                <div href="#" class="nav-option">
+                  <div class="nav-option-lable">Pages</div>
+                  <div class="nav-option-icon-wrapper">
+                    <img
+                      src="assets/svg/dropdown.svg"
+                      alt="Dropdown Icon"
+                      class="dropdown-icon"
+                    />
+                  </div>
+                </div>
+                <div href="#" class="nav-option">
+                  <div class="nav-option-lable">Projects</div>
+                  <div class="nav-option-icon-wrapper">
+                    <img
+                      src="assets/svg/dropdown.svg"
+                      alt="Dropdown Icon"
+                      class="dropdown-icon"
+                    />
+                  </div>
+                </div>
+                <div href="#" class="nav-option">
+                  <div class="nav-option-lable">Blog</div>
+                  <div class="nav-option-icon-wrapper">
+                    <img
+                      src="assets/svg/dropdown.svg"
+                      alt="Dropdown Icon"
+                      class="dropdown-icon"
+                    />
+                  </div>
+                </div>
+                <div href="#" class="nav-option">
+                  <div class="nav-option-lable">Blocks</div>
+                  <div class="nav-option-icon-wrapper">
+                    <img
+                      src="assets/svg/dropdown.svg"
+                      alt="Dropdown Icon"
+                      class="dropdown-icon"
+                    />
+                  </div>
+                </div>
+                <div href="#" class="nav-option">
+                  <div class="nav-option-lable">Documentation</div>
+                  <div class="nav-option-icon-wrapper">
+                    <img
+                      src="assets/svg/dropdown.svg"
+                      alt="Dropdown Icon"
+                      class="dropdown-icon"
+                    />
+                  </div>
+                </div>
+              </div>
+              <button
+                class="button button--secondary nav-toggle"
+                id="navToggle"
+                aria-label="Toggle navigation menu"
+                title="Toggle navigation menu"
+              >
+                <span class="material-symbols-outlined"> menu </span>
+              </button>
+              <button class="button button--primary">Contact</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-wrapper">
+            <div class="hero-main">
+              <div class="hero-head">
+                <h1 class="hero-title">
+                  A digital agency specializing on <span>mobile design</span>
+                </h1>
+                <p class="hero-desc">
+                  We are an award winning design agency that strongly believes
+                  in the power of creative ideas.
+                </p>
+                <button class="button button--primary">Get Started</button>
+              </div>
+              <div class="hero-image-wrapper">
+                <img src="assets/images/heroImage.png" alt="Hero Image" />
+              </div>
+            </div>
+            <div class="hero-client">
+              <h4 class="hero-client-title">
+                Trusted by over 2K+ clients across the world
+              </h4>
+              <div class="hero-client-logos">
+                <div class="hero-client-logo-wrapper">
+                  <img src="assets/images/client1.png" alt="Client 1" />
+                </div>
+                <div class="hero-client-logo-wrapper">
+                  <img src="assets/images/client2.png" alt="Client 2" />
+                </div>
+                <div class="hero-client-logo-wrapper">
+                  <img src="assets/images/client3.png" alt="Client 3" />
+                </div>
+                <div class="hero-client-logo-wrapper">
+                  <img src="assets/images/client4.png" alt="Client 4" />
+                </div>
+                <div class="hero-client-logo-wrapper">
+                  <img src="assets/images/client5.png" alt="Client 5" />
+                </div>
+                <div class="hero-client-logo-wrapper">
+                  <img src="assets/images/client6.png" alt="Client 6" />
+                </div>
+                <div class="hero-client-logo-wrapper">
+                  <img src="assets/images/client7.png" alt="Client 7" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="decoration-image-wrapper">
+          <img src="assets/svg/decoration1.svg" alt="Decoration image 1" />
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about-section">
+        <div class="container">
+          <div class="about-wrapper">
+            <div class="section-head">
+              <p class="section-subtitle">What We Do</p>
+              <h2 class="section-title">
+                The service we offer is specifically designed to meet your
+                needs.
+              </h2>
+            </div>
+            <div class="section-body">
+              <div class="about-card">
+                <div class="about-card-image-wrapper">
+                  <img src="assets/images/webDesign.png" alt="Web Design" />
+                </div>
+                <h3 class="about-card-title">Web Design</h3>
+                <p class="about-card-desc">
+                  Nulla vitae elit libero, a pharetra augue. Donec id elit non
+                  mi porta gravida at eget. Fusce dapibus tellus.
+                </p>
+                <a href="#"
+                  >Learn More
+                  <div class="about-link-icon-wrapper">
+                    <img src="assets/svg/linkArrow.svg" alt="Link Arrow" />
+                  </div>
+                </a>
+              </div>
+              <div class="about-card">
+                <div class="about-card-image-wrapper">
+                  <img
+                    src="assets/images/graphicDesign.png"
+                    alt="Graphic Design"
+                  />
+                </div>
+                <h3 class="about-card-title">Graphic Design</h3>
+                <p class="about-card-desc">
+                  Maecenas faucibus mollis interdum. Vivamus sagittis lacus vel
+                  augue laoreet. Sed posuere consectetur.
+                </p>
+                <a href="#"
+                  >Learn More
+                  <div class="about-link-icon-wrapper">
+                    <img src="assets/svg/linkArrow.svg" alt="Link Arrow" />
+                  </div>
+                </a>
+              </div>
+
+              <div class="about-card">
+                <div class="about-card-image-wrapper">
+                  <img src="assets/images/3Danimation.png" alt="3D Animation" />
+                </div>
+                <h3 class="about-card-title">3D Animation</h3>
+                <p class="about-card-desc">
+                  Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                  Praesent commodo cursus magna scelerisque.
+                </p>
+                <a href="#"
+                  >Learn More
+                  <div class="about-link-icon-wrapper">
+                    <img
+                      class="about-link-icon"
+                      src="assets/svg/linkArrow.svg"
+                      alt="Link Arrow"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Strategy Section -->
+      <section class="strategy-section">
+        <div class="container">
+          <div class="strategy-wrapper">
+            <div class="section-head">
+              <p class="section-subtitle">Our Strategy</p>
+              <h2 class="section-title">
+                Here are 3 working steps to organize our projects.
+              </h2>
+              <p class="section-desc">
+                Aenean eu leo quam. Pellentesque ornare sem lacinia quam
+                venenatis vestibulum. Etiam porta sem malesuada magna mollis
+                euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                Nullam quis risus eget urna mollis.
+              </p>
+              <p class="section-desc">
+                Nullam id dolor id nibh ultricies vehicula ut id elit.
+                Vestibulum id ligula porta felis euismod semper. Aenean lacinia
+                bibendum nulla sed consectetur.
+              </p>
+              <button class="button button--primary">Get Started</button>
+            </div>
+            <div class="section-body strategy-cards">
+              <div class="card strategy-card">
+                <div class="strategy-card-number-wrapper">
+                  <span class="strategy-card-number">01</span>
+                </div>
+                <div class="strategy-card-content">
+                  <h3 class="strategy-card-title">Collect Ideas</h3>
+                  <p class="strategy-card-desc">
+                    Nulla vitae elit libero pharetra augue dapibus.
+                  </p>
+                </div>
+              </div>
+              <div class="card strategy-card">
+                <div class="strategy-card-number-wrapper">
+                  <span class="strategy-card-number">02</span>
+                </div>
+                <div class="strategy-card-content">
+                  <h3 class="strategy-card-title">Data Analysis</h3>
+                  <p class="strategy-card-desc">
+                    Vivamus sagittis lacus vel augue laoreet.
+                  </p>
+                </div>
+              </div>
+              <div class="card strategy-card">
+                <div class="strategy-card-number-wrapper">
+                  <span class="strategy-card-number">03</span>
+                </div>
+                <div class="strategy-card-content">
+                  <h3 class="strategy-card-title">Finalize Product</h3>
+                  <p class="strategy-card-desc">
+                    Cras mattis consectetur purus sit amet.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Choose Us Section -->
+      <section class="choose-us-section">
+        <div class="container">
+          <div class="choose-us-wrapper">
+            <div class="choose-us-image-wrapper">
+              <img
+                src="assets/images/chooseUsImage.png"
+                alt="Choose Us Image"
+              />
+            </div>
+            <div class="choose-us-main">
+              <div class="section-head">
+                <p class="section-subtitle">Why Choose Us?</p>
+                <h2 class="section-title">
+                  We bring solutions to make life easier.
+                </h2>
+                <div class="choose-us-details">
+                  <div class="choose-us-detail active">
+                    <h3 class="choose-us-detail-label">
+                      <img
+                        src="assets/svg/dropdown.svg"
+                        alt="Dropdown Icon"
+                        class="choose-us-icon"
+                      />
+                      Professional Design
+                    </h3>
+                    <p class="choose-us-detail-content">
+                      Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                      condimentum nibh, ut fermentum massa justo sit amet risus.
+                      Cras mattis consectetur purus sit amet fermentum. Praesent
+                      commodo cursus magna, vel.
+                    </p>
+                  </div>
+                  <div class="choose-us-detail">
+                    <h3 class="choose-us-detail-label">
+                      <img
+                        src="assets/svg/dropdown.svg"
+                        alt="Dropdown Icon"
+                        class="choose-us-icon"
+                      />
+                      Top-Notch Support
+                    </h3>
+                    <p class="choose-us-detail-content">
+                      Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                      condimentum nibh, ut fermentum massa justo sit amet risus.
+                      Cras mattis consectetur purus sit amet fermentum. Praesent
+                      commodo cursus magna, vel.
+                    </p>
+                  </div>
+                  <div class="choose-us-detail">
+                    <h3 class="choose-us-detail-label">
+                      <img
+                        src="assets/svg/dropdown.svg"
+                        alt="Dropdown Icon"
+                        class="choose-us-icon"
+                      />
+                      Header and Slider Options
+                    </h3>
+                    <p class="choose-us-detail-content">
+                      Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                      condimentum nibh, ut fermentum massa justo sit amet risus.
+                      Cras mattis consectetur purus sit amet fermentum. Praesent
+                      commodo cursus magna, vel.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="decoration-image-wrapper">
+          <img src="assets/svg/decoration2.svg" alt="Decoration image 2" />
+        </div>
+      </section>
+
+      <!-- Fact Section -->
+      <section class="fact-section">
+        <div class="container">
+          <div class="fact-wrapper">
+            <div class="section-main">
+              <div class="section-head">
+                <p class="section-subtitle">Company Facts</p>
+                <h2 class="section-title">We are proud of our design team</h2>
+                <p class="section-desc">
+                  Just sit back and relax while we take care of your business
+                  needs for you.
+                </p>
+              </div>
+              <div class="fact-cards">
+                <div class="fact-card">
+                  <div class="fact-icon-wrapper">
+                    <img
+                      class="fact-icon"
+                      src="assets/svg/completedProjects.svg"
+                      alt="Completed Projects"
+                    />
+                  </div>
+                  <div class="fact-number">1000+</div>
+                  <div class="fact-label">Completed Projects</div>
+                </div>
+                <div class="fact-card">
+                  <div class="fact-icon-wrapper">
+                    <img
+                      class="fact-icon"
+                      src="assets/svg/happyCustomers.svg"
+                      alt="Happy Customers"
+                    />
+                  </div>
+                  <div class="fact-number">50K+</div>
+                  <div class="fact-label">Happy Customers</div>
+                </div>
+                <div class="fact-card">
+                  <div class="fact-icon-wrapper">
+                    <img
+                      class="fact-icon"
+                      src="assets/svg/awardsWon.svg"
+                      alt="Awards Won"
+                    />
+                  </div>
+                  <div class="fact-number">20+</div>
+                  <div class="fact-label">Awards Won</div>
+                </div>
+              </div>
+            </div>
+            <div class="team-info-cards">
+              <div class="card team-info-card">
+                <div class="team-info-card-image-wrapper">
+                  <img
+                    src="assets/images/person1.jpg"
+                    alt="Person 1"
+                    class="team-info-card-image"
+                  />
+                </div>
+                <div class="team-info-card-name">Coriss Ambody</div>
+                <div class="team-info-card-position">Financial Analyst</div>
+                <div class="team-info-card-desc">
+                  Fermentum massa justo sit amet risus morbi leo.
+                </div>
+                <div class="team-info-card-socials">
+                  <a href="#" class="team-info-card-social-icon-wrapper">
+                    <img
+                      src="assets/svg/twitter.svg"
+                      alt="Twitter Icon"
+                      class="team-info-card-social-icon"
+                    />
+                  </a>
+                  <a href="#" class="team-info-card-social-icon-wrapper">
+                    <img
+                      src="assets/svg/facebook.svg"
+                      alt="Facebook Icon"
+                      class="team-info-card-social-icon"
+                    />
+                  </a>
+
+                  <a href="#" class="team-info-card-social-icon-wrapper">
+                    <img
+                      src="assets/svg/dribbble.svg"
+                      alt="Dribbble Icon"
+                      class="team-info-card-social-icon"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="card team-info-card">
+                <div class="team-info-card-image-wrapper">
+                  <img
+                    src="assets/images/person2.jpg"
+                    alt="Person 2"
+                    class="team-info-card-image"
+                  />
+                </div>
+                <div class="team-info-card-name">Cory Zamora</div>
+                <div class="team-info-card-position">Marketing Specialist</div>
+                <div class="team-info-card-desc">
+                  Fermentum massa justo sit amet risus morbi leo.
+                </div>
+                <div class="team-info-card-socials">
+                  <a href="#" class="team-info-card-social-icon-wrapper">
+                    <img
+                      src="assets/svg/twitter.svg"
+                      alt="Twitter Icon"
+                      class="team-info-card-social-icon"
+                    />
+                  </a>
+                  <a href="#" class="team-info-card-social-icon-wrapper">
+                    <img
+                      src="assets/svg/facebook.svg"
+                      alt="Facebook Icon"
+                      class="team-info-card-social-icon"
+                    />
+                  </a>
+
+                  <a href="#" class="team-info-card-social-icon-wrapper">
+                    <img
+                      src="assets/svg/dribbble.svg"
+                      alt="Dribbble Icon"
+                      class="team-info-card-social-icon"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="card team-info-card">
+                <div class="team-info-card-image-wrapper">
+                  <img
+                    src="assets/images/person3.jpg"
+                    alt="Person 3"
+                    class="team-info-card-image"
+                  />
+                </div>
+                <div class="team-info-card-name">Nikolas Brooten</div>
+                <div class="team-info-card-position">Sales Manager</div>
+                <div class="team-info-card-desc">
+                  Fermentum massa justo sit amet risus morbi leo.
+                </div>
+                <div class="team-info-card-socials">
+                  <a href="#" class="team-info-card-social-icon-wrapper">
+                    <img
+                      src="assets/svg/twitter.svg"
+                      alt="Twitter Icon"
+                      class="team-info-card-social-icon"
+                    />
+                  </a>
+                  <a href="#" class="team-info-card-social-icon-wrapper">
+                    <img
+                      src="assets/svg/facebook.svg"
+                      alt="Facebook Icon"
+                      class="team-info-card-social-icon"
+                    />
+                  </a>
+
+                  <a href="#" class="team-info-card-social-icon-wrapper">
+                    <img
+                      src="assets/svg/dribbble.svg"
+                      alt="Dribbble Icon"
+                      class="team-info-card-social-icon"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="card team-info-card">
+                <div class="team-info-card-image-wrapper">
+                  <img
+                    src="assets/images/person4.jpg"
+                    alt="Person 4"
+                    class="team-info-card-image"
+                  />
+                </div>
+                <div class="team-info-card-name">Jackie Sanders</div>
+                <div class="team-info-card-position">Investment Planner</div>
+                <div class="team-info-card-desc">
+                  Fermentum massa justo sit amet risus morbi leo.
+                </div>
+                <div class="team-info-card-socials">
+                  <a href="#" class="team-info-card-social-icon-wrapper">
+                    <img
+                      src="assets/svg/twitter.svg"
+                      alt="Twitter Icon"
+                      class="team-info-card-social-icon"
+                    />
+                  </a>
+                  <a href="#" class="team-info-card-social-icon-wrapper">
+                    <img
+                      src="assets/svg/facebook.svg"
+                      alt="Facebook Icon"
+                      class="team-info-card-social-icon"
+                    />
+                  </a>
+
+                  <a href="#" class="team-info-card-social-icon-wrapper">
+                    <img
+                      src="assets/svg/dribbble.svg"
+                      alt="Dribbble Icon"
+                      class="team-info-card-social-icon"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="projects-section">
+        <div class="container">
+          <div class="projects-wrapper">
+            <div class="section-head">
+              <p class="section-subtitle">Latest Projects</p>
+              <h2 class="section-title">
+                Check out some of our awesome projects with creative ideas and
+                great design.
+              </h2>
+            </div>
+            <div class="section-body">
+              <div class="project-carousel">
+                <div class="project-carousel-item">
+                  <div class="project-carousel-item-image-wrapper">
+                    <img
+                      src="assets/images/crasFermentumSem.jpg"
+                      alt="Cras Fermentum Sem"
+                      class="project-carousel-item-image"
+                    />
+                  </div>
+                  <div class="project-carousel-item-content">
+                    <h3 class="project-carousel-item-title">
+                      Cras Fermentum Sem
+                    </h3>
+                    <p class="project-carousel-item-type">Mobile Design</p>
+                  </div>
+                </div>
+                <div class="project-carousel-item">
+                  <div class="project-carousel-item-image-wrapper">
+                    <img
+                      src="assets/images/venenatisEuismodVehicula.jpg"
+                      alt="Venenatis Euismod Vehicula"
+                      class="project-carousel-item-image"
+                    />
+                  </div>
+                  <div class="project-carousel-item-content">
+                    <h3 class="project-carousel-item-title">
+                      Venenatis Euismod Vehicula
+                    </h3>
+                    <p class="project-carousel-item-type">Web Design</p>
+                  </div>
+                </div>
+                <div class="project-carousel-item">
+                  <div class="project-carousel-item-image-wrapper">
+                    <img
+                      src="assets/images/tortorTellusCursus.jpg"
+                      alt="Tortor Tellus Cursus"
+                      class="project-carousel-item-image"
+                    />
+                  </div>
+                  <div class="project-carousel-item-content">
+                    <h3 class="project-carousel-item-title">
+                      Tortor Tellus Cursus
+                    </h3>
+                    <p class="project-carousel-item-type">Stationary</p>
+                  </div>
+                </div>
+                <div class="project-carousel-item">
+                  <div class="project-carousel-item-image-wrapper">
+                    <img
+                      src="assets/images/crasFermentumSem.jpg"
+                      alt="Cras Fermentum Sem"
+                      class="project-carousel-item-image"
+                    />
+                  </div>
+                  <div class="project-carousel-item-content">
+                    <h3 class="project-carousel-item-title">
+                      Cras Fermentum Sem
+                    </h3>
+                    <p class="project-carousel-item-type">Mobile Design</p>
+                  </div>
+                </div>
+                <div class="project-carousel-item">
+                  <div class="project-carousel-item-image-wrapper">
+                    <img
+                      src="assets/images/venenatisEuismodVehicula.jpg"
+                      alt="Venenatis Euismod Vehicula"
+                      class="project-carousel-item-image"
+                    />
+                  </div>
+                  <div class="project-carousel-item-content">
+                    <h3 class="project-carousel-item-title">
+                      Venenatis Euismod Vehicula
+                    </h3>
+                    <p class="project-carousel-item-type">Web Design</p>
+                  </div>
+                </div>
+                <div class="project-carousel-item">
+                  <div class="project-carousel-item-image-wrapper">
+                    <img
+                      src="assets/images/tortorTellusCursus.jpg"
+                      alt="Tortor Tellus Cursus"
+                      class="project-carousel-item-image"
+                    />
+                  </div>
+                  <div class="project-carousel-item-content">
+                    <h3 class="project-carousel-item-title">
+                      Tortor Tellus Cursus
+                    </h3>
+                    <p class="project-carousel-item-type">Stationary</p>
+                  </div>
+                </div>
+                <div class="project-carousel-item">
+                  <div class="project-carousel-item-image-wrapper">
+                    <img
+                      src="assets/images/crasFermentumSem.jpg"
+                      alt="Cras Fermentum Sem"
+                      class="project-carousel-item-image"
+                    />
+                  </div>
+                  <div class="project-carousel-item-content">
+                    <h3 class="project-carousel-item-title">
+                      Cras Fermentum Sem
+                    </h3>
+                    <p class="project-carousel-item-type">Mobile Design</p>
+                  </div>
+                </div>
+                <div class="project-carousel-item">
+                  <div class="project-carousel-item-image-wrapper">
+                    <img
+                      src="assets/images/venenatisEuismodVehicula.jpg"
+                      alt="Venenatis Euismod Vehicula"
+                      class="project-carousel-item-image"
+                    />
+                  </div>
+                  <div class="project-carousel-item-content">
+                    <h3 class="project-carousel-item-title">
+                      Venenatis Euismod Vehicula
+                    </h3>
+                    <p class="project-carousel-item-type">Web Design</p>
+                  </div>
+                </div>
+                <div class="project-carousel-item">
+                  <div class="project-carousel-item-image-wrapper">
+                    <img
+                      src="assets/images/tortorTellusCursus.jpg"
+                      alt="Tortor Tellus Cursus"
+                      class="project-carousel-item-image"
+                    />
+                  </div>
+                  <div class="project-carousel-item-content">
+                    <h3 class="project-carousel-item-title">
+                      Tortor Tellus Cursus
+                    </h3>
+                    <p class="project-carousel-item-type">Stationary</p>
+                  </div>
+                </div>
+              </div>
+              <div class="project-carousel-indicators">
+                <button
+                  id="carouselLeftIndicator"
+                  class="button button--primary project-carousel-indicator-wrapper"
+                >
+                  <img
+                    class="project-carousel-indicator"
+                    src="assets/svg/arrowLeft.svg"
+                    alt="Left Arrow"
+                  />
+                </button>
+                <button
+                  id="carouselRightIndicator"
+                  class="button button--primary project-carousel-indicator-wrapper"
+                >
+                  <img
+                    class="project-carousel-indicator"
+                    src="assets/svg/arrowRight.svg"
+                    alt="Right Arrow"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="decoration-image-wrapper">
+          <img src="assets/svg/decoration1.svg" alt="Decoration image 3" />
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="testimonials-section">
+        <div class="container">
+          <div class="testimonials-wrapper">
+            <div class="section-head">
+              <p class="section-subtitle">Happy Customers</p>
+              <h2 class="section-title">
+                Don't take our word for it. See what customers are saying about
+                us.
+              </h2>
+            </div>
+            <div class="section-body">
+              <div class="card testimonial-card">
+                <div class="testimonial-card-star-wrapper">
+                  <span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span>
+                </div>
+                <div class="testimonial-card-quote">
+                  “Vivamus sagittis lacus vel augue laoreet rutrum faucibus
+                  dolor auctor. Vestibulum id ligula porta felis euismod semper.
+                  Cras justo odio dapibus facilisis sociis natoque penatibus.”
+                </div>
+                <div class="testimonial-card-author">
+                  <div class="testimonial-card-author-avatar-wrapper">
+                    <img src="assets/images/person1.jpg" alt="Person 1" />
+                  </div>
+                  <div class="testimonial-card-author-info">
+                    <div class="testimonial-card-author-name">
+                      Coriss Ambody
+                    </div>
+                    <div class="testimonial-card-author-position">
+                      Financial Analyst
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card testimonial-card">
+                <div class="testimonial-card-star-wrapper">
+                  <span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span>
+                </div>
+                <div class="testimonial-card-quote">
+                  “Etiam adipiscing tincidunt elit convallis felis suscipit ut.
+                  Phasellus rhoncus tincidunt auctor. Nullam eu sagittis mauris.
+                  Donec non dolor ac elit aliquam tincidunt at at sapien. Aenean
+                  tortor libero condimentum ac laoreet vitae.”
+                </div>
+                <div class="testimonial-card-author">
+                  <div class="testimonial-card-author-avatar-wrapper">
+                    <img src="assets/images/person4.jpg" alt="Person 4" />
+                  </div>
+                  <div class="testimonial-card-author-info">
+                    <div class="testimonial-card-author-name">
+                      Coriss Ambady
+                    </div>
+                    <div class="testimonial-card-author-position">
+                      Financial Analyst
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card testimonial-card">
+                <div class="testimonial-card-star-wrapper">
+                  <span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span>
+                </div>
+                <div class="testimonial-card-quote">
+                  “Fusce dapibus, tellus ac cursus tortor mauris condimentum
+                  fermentum massa justo sit amet. Vivamus sagittis lacus vel
+                  augue laoreet rutrum faucibus dolor auctor. Cras mattis
+                  consectetur purus sit amet fermentum. Aenean lacinia bibendum
+                  nulla sed.”
+                </div>
+                <div class="testimonial-card-author">
+                  <div class="testimonial-card-author-avatar-wrapper">
+                    <img src="assets/images/person2.jpg" alt="Person 2" />
+                  </div>
+                  <div class="testimonial-card-author-info">
+                    <div class="testimonial-card-author-name">Cory Zamora</div>
+                    <div class="testimonial-card-author-position">
+                      Marketing Specialist
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card testimonial-card">
+                <div class="testimonial-card-star-wrapper">
+                  <span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span>
+                </div>
+                <div class="testimonial-card-quote">
+                  “Donec id elit non mi porta gravida at eget metus. Nulla vitae
+                  elit libero, a pharetra augue. Cum sociis natoque penatibus et
+                  magnis dis parturient montes, nascetur ridiculus mus.”
+                </div>
+                <div class="testimonial-card-author">
+                  <div class="testimonial-card-author-avatar-wrapper">
+                    <img src="assets/images/person5.jpg" alt="Person 5" />
+                  </div>
+                  <div class="testimonial-card-author-info">
+                    <div class="testimonial-card-author-name">
+                      Laura Widerski
+                    </div>
+                    <div class="testimonial-card-author-position">
+                      Sales Specialist
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card testimonial-card">
+                <div class="testimonial-card-star-wrapper">
+                  <span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span>
+                </div>
+                <div class="testimonial-card-quote">
+                  “Curabitur blandit tempus porttitor. Vivamus sagittis lacus
+                  vel augue laoreet rutrum faucibus dolor auctor. Nullam quis
+                  risus eget porta ac consectetur vestibulum. Donec sed odio dui
+                  consectetur adipiscing elit.”
+                </div>
+                <div class="testimonial-card-author">
+                  <div class="testimonial-card-author-avatar-wrapper">
+                    <img src="assets/images/person3.jpg" alt="Person 3" />
+                  </div>
+                  <div class="testimonial-card-author-info">
+                    <div class="testimonial-card-author-name">
+                      Nikolas Brooten
+                    </div>
+                    <div class="testimonial-card-author-position">
+                      Sales Manager
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card testimonial-card">
+                <div class="testimonial-card-star-wrapper">
+                  <span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span
+                  ><span class="material-symbols-outlined"> star_rate </span>
+                </div>
+                <div class="testimonial-card-quote">
+                  “Maecenas sed diam eget risus varius blandit sit amet non
+                  magna. Cum sociis natoque penatibus magnis dis montes,
+                  nascetur ridiculus mus. Donec sed odio dui. Nulla vitae elit
+                  libero.”
+                </div>
+                <div class="testimonial-card-author">
+                  <div class="testimonial-card-author-avatar-wrapper">
+                    <img src="assets/images/person6.jpg" alt="Person 6" />
+                  </div>
+                  <div class="testimonial-card-author-info">
+                    <div class="testimonial-card-author-name">
+                      Jackie Sanders
+                    </div>
+                    <div class="testimonial-card-author-position">
+                      Investment Planner
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq-section">
+        <div class="container">
+          <div class="faq-wrapper">
+            <div class="section-head">
+              <p class="section-subtitle">FAQ</p>
+              <h2 class="section-title">
+                If you don't see an answer to your question, you can send us an
+                email from our contact form.
+              </h2>
+              <p class="section-desc">
+                Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
+                eget lacinia odio sem nec elit. Nullam quis risus eget urna
+                mollis ornare.
+              </p>
+              <button class="button button--primary">ALL FAQ</button>
+            </div>
+            <div class="faq-cards">
+              <div class="card faq-card">
+                <div class="faq-card-icon-wrapper">
+                  <img
+                    class="faq-card-icon"
+                    src="assets/svg/dropdown.svg"
+                    alt="Dropdown Icon"
+                  />
+                </div>
+                <div class="faq-card-content">
+                  <h3 class="faq-card-question">
+                    How do I get my subscription receipt?
+                  </h3>
+                  <p class="faq-card-answer">
+                    Aenean lacinia bibendum nulla sed consectetur. Cras justo
+                    odio, dapibus ac facilisis in, egestas eget quam. Donec sed
+                    odio dui. Donec ullamcorper nulla non metus auctor
+                    fringilla.
+                  </p>
+                </div>
+              </div>
+              <div class="card faq-card">
+                <div class="faq-card-icon-wrapper">
+                  <img
+                    class="faq-card-icon"
+                    src="assets/svg/dropdown.svg"
+                    alt="Dropdown Icon"
+                  />
+                </div>
+                <div class="faq-card-content">
+                  <h3 class="faq-card-question">
+                    Are there any discounts for people in need?
+                  </h3>
+                  <p class="faq-card-answer">
+                    Aenean lacinia bibendum nulla sed consectetur. Cras justo
+                    odio, dapibus ac facilisis in, egestas eget quam. Donec sed
+                    odio dui. Donec ullamcorper nulla non metus auctor
+                    fringilla.
+                  </p>
+                </div>
+              </div>
+              <div class="card faq-card">
+                <div class="faq-card-icon-wrapper">
+                  <img
+                    class="faq-card-icon"
+                    src="assets/svg/dropdown.svg"
+                    alt="Dropdown Icon"
+                  />
+                </div>
+                <div class="faq-card-content">
+                  <h3 class="faq-card-question">
+                    Do you offer a free trial edit?
+                  </h3>
+                  <p class="faq-card-answer">
+                    Aenean lacinia bibendum nulla sed consectetur. Cras justo
+                    odio, dapibus ac facilisis in, egestas eget quam. Donec sed
+                    odio dui. Donec ullamcorper nulla non metus auctor
+                    fringilla.
+                  </p>
+                </div>
+              </div>
+              <div class="card faq-card">
+                <div class="faq-card-icon-wrapper">
+                  <img
+                    class="faq-card-icon"
+                    src="assets/svg/dropdown.svg"
+                    alt="Dropdown Icon"
+                  />
+                </div>
+                <div class="faq-card-content">
+                  <h3 class="faq-card-question">
+                    How do I reset my Account password?
+                  </h3>
+                  <p class="faq-card-answer">
+                    Aenean lacinia bibendum nulla sed consectetur. Cras justo
+                    odio, dapibus ac facilisis in, egestas eget quam. Donec sed
+                    odio dui. Donec ullamcorper nulla non metus auctor
+                    fringilla.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="decoration-image-wrapper">
+          <img src="assets/svg/decoration3.svg" alt="Decoration image 4" />
+        </div>
+      </section>
+    </main>
+  </body>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</html>
