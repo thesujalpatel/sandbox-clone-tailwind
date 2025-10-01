@@ -301,8 +301,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const faqCards = document.querySelectorAll(".faq-card");
 
   faqCards.forEach((card) => {
-    const question = card.querySelector(".faq-card-question");
-    const answer = card.querySelector(".faq-card-answer");
+    const question = card.querySelector(".faq-question");
+    const answer = card.querySelector(".faq-answer");
 
     if (question && answer) {
       card.classList.remove("active");
