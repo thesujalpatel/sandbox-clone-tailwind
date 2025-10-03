@@ -26,16 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    const navOptionsList = navOptions.querySelectorAll(".nav-option");
-    navOptionsList.forEach((option) => {
-      option.addEventListener("click", function () {
-        navToggle.classList.remove("active");
-        navOptions.classList.remove("active");
-      });
-    });
-
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 1024) {
         navToggle.classList.remove("active");
         navOptions.classList.remove("active");
       }

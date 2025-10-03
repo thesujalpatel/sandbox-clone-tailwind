@@ -51,7 +51,6 @@
         --font-urbanist: "Urbanist";
 
         /* Box shadows */
-        --shadow-card: ;
         --shadow-card-hover: 0px 5px 35px 0px var(--color-shadow-hover);
         --shadow-button: 0px 5px 15px 0px var(--color-primary);
 
@@ -83,22 +82,10 @@
         }
       }
 
-      /* Variants and Stats */
-      @layer variants {
-        /* Buttons */
-        .button--primary {
-          background-color: var(--color-primary);
-          color: var(--color-white);
-        }
-        .button--primary:hover {
+      /* Utilities */
+      @layer utilities {
+        .shadow-button-hover:hover {
           box-shadow: 0px 5px 15px 0px var(--color-primary);
-        }
-        .button--secondary {
-          background-color: var(--color-light);
-          color: var(--color-primary);
-        }
-        .button--secondary:hover {
-          box-shadow: var(--shadow-button);
         }
       }
 
@@ -138,13 +125,39 @@
         padding-top: 10px;
       }
 
-      /* Navigation toggle styles for mobile */
       @media (max-width: 1023px) {
         .nav-options.active {
           opacity: 1;
           transform: translateY(0);
           display: flex;
           visibility: visible;
+        }
+      }
+
+      @media (max-width: 639px) {
+        h1 {
+          line-height: 1.2;
+        }
+        h2 {
+          line-height: 1.3;
+        }
+        @media (max-width: 768px) {
+          .button {
+            padding: 12px 18px;
+            font-size: 16px;
+          }
+        }
+        @media (max-width: 480px) {
+          .button {
+            padding: 12px 18px;
+            font-size: 16px;
+          }
+        }
+        @media (max-width: 360px) {
+          .button {
+            padding: 10px 15px;
+            font-size: 15px;
+          }
         }
       }
     </style>
@@ -154,7 +167,7 @@
       <!-- Navigation Bar -->
       <nav class="bg-light py-[15px]">
         <div class="mx-auto px-5 max-w-[1320px]">
-          <div class="flex justify-between items-center">
+          <div class="relative flex justify-between items-center">
             <a href="#" class="w-auto max-h-[26px]">
               <img
                 src="assets/images/logo.png"
@@ -162,92 +175,68 @@
                 class="block w-full max-w-full h-full object-cover"
               />
             </a>
-            <div class="flex items-center gap-5">
+            <div class="relative flex items-center gap-5">
               <div
-                class="hidden invisible lg:visible top-[120%] right-0 z-[2] absolute lg:flex lg:flex-row flex-col gap-[30px] gap-5 bg-white lg:bg-transparent opacity-0 opacity-0 lg:opacity-100 shadow-card lg:shadow-none p-5 lg:p-0 rounded-lg lg:rounded-none w-[200px] lg:w-auto transition-all -translate-y-10 lg:translate-y-0 duration-300 nav-options"
+                class="hidden invisible lg:visible top-full right-0 z-50 lg:static absolute lg:flex lg:flex-row flex-col gap-5 lg:gap-[30px] bg-white lg:bg-transparent opacity-0 lg:opacity-100 shadow-lg lg:shadow-none p-5 lg:p-0 rounded-lg lg:rounded-none w-[220px] lg:w-auto transition-all -translate-y-2 lg:translate-y-0 duration-300 nav-options"
               >
                 <div
-                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer nav-option"
+                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer"
                 >
-                  <div class="nav-option-lable">Demos</div>
+                  <span>Demos</span>
                   <div
-                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300 nav-option-icon-wrapper"
+                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300"
                   >
-                    <img
-                      src="assets/svg/dropdown.svg"
-                      alt="Dropdown Icon"
-                      class="dropdown-icon"
-                    />
+                    <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
                   </div>
                 </div>
                 <div
-                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer nav-option"
+                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer"
                 >
-                  <div class="nav-option-lable">Pages</div>
+                  <span>Pages</span>
                   <div
-                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300 nav-option-icon-wrapper"
+                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300"
                   >
-                    <img
-                      src="assets/svg/dropdown.svg"
-                      alt="Dropdown Icon"
-                      class="dropdown-icon"
-                    />
+                    <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
                   </div>
                 </div>
                 <div
-                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer nav-option"
+                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer"
                 >
-                  <div class="nav-option-lable">Projects</div>
+                  <span>Projects</span>
                   <div
-                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300 nav-option-icon-wrapper"
+                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300"
                   >
-                    <img
-                      src="assets/svg/dropdown.svg"
-                      alt="Dropdown Icon"
-                      class="dropdown-icon"
-                    />
+                    <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
                   </div>
                 </div>
                 <div
-                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer nav-option"
+                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer"
                 >
-                  <div class="nav-option-lable">Blog</div>
+                  <span>Blog</span>
                   <div
-                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300 nav-option-icon-wrapper"
+                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300"
                   >
-                    <img
-                      src="assets/svg/dropdown.svg"
-                      alt="Dropdown Icon"
-                      class="dropdown-icon"
-                    />
+                    <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
                   </div>
                 </div>
                 <div
-                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer nav-option"
+                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer"
                 >
-                  <div class="nav-option-lable">Blocks</div>
+                  <span>Blocks</span>
                   <div
-                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300 nav-option-icon-wrapper"
+                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300"
                   >
-                    <img
-                      src="assets/svg/dropdown.svg"
-                      alt="Dropdown Icon"
-                      class="dropdown-icon"
-                    />
+                    <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
                   </div>
                 </div>
                 <div
-                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer nav-option"
+                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer"
                 >
-                  <div class="nav-option-lable">Documentation</div>
+                  <span>Documentation</span>
                   <div
-                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300 nav-option-icon-wrapper"
+                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300"
                   >
-                    <img
-                      src="assets/svg/dropdown.svg"
-                      alt="Dropdown Icon"
-                      class="dropdown-icon"
-                    />
+                    <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
                   </div>
                 </div>
               </div>
@@ -259,7 +248,11 @@
               >
                 <span class="material-symbols-outlined"> menu </span>
               </button>
-              <button class="button button--primary">Contact</button>
+              <button
+                class="bg-primary hover:shadow-button px-5 py-[15px] border border-transparent rounded-[50px] w-fit font-semibold text-[17px] text-white transition-all duration-300 cursor-pointer"
+              >
+                Contact
+              </button>
             </div>
           </div>
         </div>
@@ -268,9 +261,11 @@
 
     <main>
       <!-- Hero Section -->
-      <section class="relative py-20">
+      <section class="relative py-10 sm:py-16 lg:py-20">
         <div class="mx-auto px-5 max-w-[1320px]">
-          <div class="flex flex-col gap-[90px] mb-20">
+          <div
+            class="flex flex-col gap-10 sm:gap-16 lg:gap-[90px] mb-10 sm:mb-16 lg:mb-20"
+          >
             <div
               class="flex lg:flex-row flex-col items-center gap-[35px] lg:text-left text-center"
             >
@@ -278,13 +273,13 @@
                 class="flex flex-col items-center lg:items-start gap-[30px] max-w-[500px]"
               >
                 <h1
-                  class="font-semibold text-[54px] text-dark xs:text-[36px] xxs:text-[30px] sm:text-[40px] md:text-[46px] lg:text-[54px] xl:text-[54px] leading-[1.1]"
+                  class="font-semibold text-[30px] text-dark xs:text-[36px] sm:text-[40px] md:text-[46px] lg:text-[54px] leading-[1.1]"
                 >
                   A digital agency specializing on
                   <span class="text-primary">mobile design</span>
                 </h1>
                 <p
-                  class="font-medium text-[22px] text-dark-secondary xs:text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] leading-[1.4]"
+                  class="font-medium text-[16px] text-dark-secondary sm:text-[18px] md:text-[20px] lg:text-[22px] leading-[1.4]"
                 >
                   We are an award winning design agency that strongly believes
                   in the power of creative ideas.
@@ -295,7 +290,7 @@
                   Get Started
                 </button>
               </div>
-              <div class="flex-1 max-w-[400px] lg:max-w-full image-hover">
+              <div class="flex-1 max-w-[400px] lg:max-w-full">
                 <img
                   src="assets/images/heroImage.png"
                   alt="Hero Image"
@@ -308,10 +303,10 @@
                 Trusted by over 2K+ clients across the world
               </h4>
               <div
-                class="flex flex-wrap justify-center items-center gap-[30px] sm:gap-[15px] md:gap-5 lg:gap-[30px]"
+                class="flex flex-wrap justify-center items-center gap-5 lg:gap-[30px]"
               >
                 <div
-                  class="max-w-[150px] xs:max-w-20 sm:max-w-[100px] md:max-w-[120px] lg:max-w-[150px]"
+                  class="max-w-20 sm:max-w-[100px] md:max-w-[120px] lg:max-w-[150px]"
                 >
                   <img
                     src="assets/images/client1.png"
@@ -388,24 +383,24 @@
 
       <!-- About Section -->
       <section
-        class="bg-linear-to-b from-primary-gradient to-secondary-gradient py-20"
+        class="bg-linear-to-b from-primary-gradient to-secondary-gradient py-10 sm:py-16 lg:py-20"
       >
         <div class="mx-auto px-5 max-w-[1320px]">
           <div class="flex flex-col items-center gap-[15px]">
             <div class="flex flex-col items-center gap-[15px]">
               <p class="font-semibold text-primary uppercase">What We Do</p>
               <h2
-                class="max-w-[780px] font-semibold text-[42px] text-dark xs:text-[28px] xxs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[42px] xl:text-[42px] text-center"
+                class="max-w-[780px] font-semibold text-[24px] text-dark sm:text-[32px] md:text-[36px] lg:text-[42px] text-center"
               >
                 The service we offer is specifically designed to meet your
                 needs.
               </h2>
             </div>
             <div
-              class="flex lg:flex-row flex-col gap-[100px] sm:gap-10 md:gap-[50px] lg:gap-[100px] mt-[50px]"
+              class="flex lg:flex-row flex-col gap-8 lg:gap-[100px] mt-8 sm:mt-10 lg:mt-[50px]"
             >
               <div class="flex flex-col items-center gap-5">
-                <div class="max-w-[400px] lg:max-w-full">
+                <div class="w-full max-w-[400px]">
                   <img
                     src="assets/images/webDesign.png"
                     alt="Web Design"
@@ -438,7 +433,7 @@
                 </a>
               </div>
               <div class="flex flex-col items-center gap-5">
-                <div class="max-w-[400px] lg:max-w-full">
+                <div class="w-full max-w-[400px]">
                   <img
                     src="assets/images/graphicDesign.png"
                     alt="Graphic Design"
@@ -471,7 +466,7 @@
                 </a>
               </div>
               <div class="flex flex-col items-center gap-5">
-                <div class="max-w-[400px] lg:max-w-full">
+                <div class="w-full max-w-[400px]">
                   <img
                     src="assets/images/3Danimation.png"
                     alt="3D Animation"
@@ -509,15 +504,17 @@
       </section>
 
       <!-- Strategy Section -->
-      <section class="py-20">
+      <section class="py-10 sm:py-16 lg:py-20">
         <div class="mx-auto px-5 max-w-[1320px]">
-          <div class="gap-[35px] lg:gap-[50px] grid grid-cols-1 lg:grid-cols-2">
+          <div
+            class="gap-8 sm:gap-10 lg:gap-[50px] grid grid-cols-1 lg:grid-cols-2"
+          >
             <div
               class="flex flex-col items-center lg:items-start gap-[15px] lg:text-left text-center"
             >
               <p class="font-semibold text-primary uppercase">Our Strategy</p>
               <h2
-                class="max-w-[780px] font-semibold text-[42px] text-dark xs:text-[28px] xxs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[42px] xl:text-[42px]"
+                class="max-w-[780px] font-semibold text-[24px] text-dark sm:text-[32px] md:text-[36px] lg:text-[42px]"
               >
                 Here are 3 working steps to organize our projects.
               </h2>
@@ -543,10 +540,10 @@
               </button>
             </div>
             <div
-              class="flex flex-col justify-center items-center lg:items-start gap-[30px]"
+              class="flex flex-col justify-center items-center lg:items-start gap-6 sm:gap-8 lg:gap-[30px]"
             >
               <div
-                class="flex sm:flex-row flex-col items-center gap-5 bg-white p-[30px] sm:p-5 rounded-lg w-auto sm:w-fit min-w-0 md:min-w-[400px] lg:min-w-[450px] max-w-[300px] lg:max-w-none sm:text-left text-center card"
+                class="flex sm:flex-row flex-col items-center gap-5 bg-white p-5 rounded-lg w-full sm:w-auto sm:text-left text-center card"
               >
                 <div
                   class="flex-shrink-0 place-items-center grid bg-light-primary rounded-full w-[60px] h-[60px]"
@@ -570,7 +567,7 @@
                 </div>
               </div>
               <div
-                class="flex flex sm:flex-row flex-col sm:flex-col items-center gap-5 bg-white md:ml-0 lg:ml-20 xl:ml-20 p-[30px] sm:p-5 rounded-lg w-auto sm:w-fit min-w-0 md:min-w-[400px] lg:min-w-[450px] max-w-[300px] lg:max-w-none sm:text-left text-center card"
+                class="flex sm:flex-row flex-col items-center gap-5 bg-white lg:ml-20 p-5 rounded-lg w-full sm:w-auto sm:text-left text-center card"
               >
                 <div
                   class="flex-shrink-0 place-items-center grid bg-light-primary rounded-full w-[60px] h-[60px]"
@@ -594,7 +591,7 @@
                 </div>
               </div>
               <div
-                class="flex flex sm:flex-row flex-col sm:flex-col items-center gap-5 bg-white md:ml-0 lg:ml-[30px] xl:ml-[30px] p-[30px] sm:p-5 rounded-lg w-auto sm:w-fit min-w-0 md:min-w-[400px] lg:min-w-[450px] max-w-[300px] lg:max-w-none sm:text-left text-center card"
+                class="flex sm:flex-row flex-col items-center gap-5 bg-white lg:ml-[30px] p-5 rounded-lg w-full sm:w-auto sm:text-left text-center card"
               >
                 <div
                   class="flex-shrink-0 place-items-center grid bg-light-primary rounded-full w-[60px] h-[60px]"
@@ -624,13 +621,13 @@
 
       <!-- Choose Us Section -->
       <section
-        class="relative bg-linear-to-b from-primary-gradient to-secondary-gradient py-20"
+        class="relative bg-linear-to-b from-primary-gradient to-secondary-gradient py-10 sm:py-16 lg:py-20"
       >
         <div class="mx-auto px-5 max-w-[1320px]">
           <div
-            class="flex lg:flex-row flex-col items-start gap-[35px] mb-20 lg:text-left text-center"
+            class="flex lg:flex-row flex-col items-start gap-8 sm:gap-10 lg:gap-[35px] mb-10 sm:mb-16 lg:mb-20 lg:text-left text-center"
           >
-            <div class="order-2 lg:order-1 mx-auto max-w-[400px]">
+            <div class="order-2 lg:order-1 mx-auto w-full max-w-[400px]">
               <img
                 src="assets/images/chooseUsImage.png"
                 alt="Choose Us Image"
@@ -643,7 +640,7 @@
                   Why Choose Us?
                 </p>
                 <h2
-                  class="max-w-[780px] font-semibold text-[42px] text-dark xs:text-[28px] xxs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[42px] xl:text-[42px]"
+                  class="max-w-[780px] font-semibold text-[24px] text-dark sm:text-[32px] md:text-[36px] lg:text-[42px]"
                 >
                   We bring solutions to make life easier.
                 </h2>
@@ -740,17 +737,17 @@
       </section>
 
       <!-- Fact Section -->
-      <section class="py-20">
+      <section class="py-10 sm:py-16 lg:py-20">
         <div class="mx-auto px-5 max-w-[1320px]">
           <div
-            class="flex lg:flex-row flex-col gap-[150px] sm:gap-[50px] md:gap-20 lg:gap-[150px] xl:gap-[150px] lg:text-left text-center"
+            class="flex lg:flex-row flex-col gap-8 sm:gap-12 lg:gap-[150px] lg:text-left text-center"
           >
             <div
-              class="flex flex-col items-center lg:items-start gap-[15px] mx-auto lg:mx-0 max-w-[400px] lg:max-w-[400px]"
+              class="flex flex-col items-center lg:items-start gap-[15px] mx-auto lg:mx-0 w-full lg:max-w-[400px]"
             >
               <p class="font-semibold text-primary uppercase">Company Facts</p>
               <h2
-                class="max-w-[780px] font-semibold text-[42px] text-dark xs:text-[28px] xxs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[42px] xl:text-[42px]"
+                class="max-w-[780px] font-semibold text-[24px] text-dark sm:text-[32px] md:text-[36px] lg:text-[42px]"
               >
                 We are proud of our design team
               </h2>
@@ -762,7 +759,7 @@
               </p>
             </div>
             <div
-              class="flex lg:flex-row flex-col justify-around items-center gap-[50px] sm:gap-10 md:gap-[30px] lg:gap-[50px] xl:gap-[50px] w-full"
+              class="flex lg:flex-row flex-col justify-around items-center gap-10 lg:gap-[50px] w-full"
             >
               <div class="flex flex-col items-center gap-5">
                 <div
@@ -812,10 +809,10 @@
             </div>
           </div>
           <div
-            class="flex md:flex-row flex-col justify-center items-center gap-[30px] pt-[60px]"
+            class="flex md:flex-row flex-col justify-center items-center gap-6 sm:gap-8 lg:gap-[30px] pt-10 sm:pt-12 lg:pt-[60px]"
           >
             <div
-              class="flex flex-col items-center sm:items-center lg:items-start gap-[10px] bg-white p-10 xxs:p-5 sm:p-[30px] rounded-lg w-full sm:w-full max-w-[300px] sm:max-w-none lg:max-w-[300px] lg:text-left text-center sm:text-center card"
+              class="flex flex-col items-center lg:items-start gap-[10px] bg-white p-5 sm:p-[30px] rounded-lg w-full lg:max-w-[300px] lg:text-left text-center card"
             >
               <div
                 class="rounded-full max-w-[100px] aspect-square overflow-hidden"
@@ -862,7 +859,7 @@
               </div>
             </div>
             <div
-              class="flex flex-col items-center sm:items-center lg:items-start gap-[10px] bg-white p-10 xxs:p-5 sm:p-[30px] rounded-lg w-full sm:w-full max-w-[300px] sm:max-w-none lg:max-w-[300px] lg:text-left text-center sm:text-center card"
+              class="flex flex-col items-center lg:items-start gap-[10px] bg-white p-5 sm:p-[30px] rounded-lg w-full lg:max-w-[300px] lg:text-left text-center card"
             >
               <div
                 class="rounded-full max-w-[100px] aspect-square overflow-hidden"
@@ -907,7 +904,7 @@
               </div>
             </div>
             <div
-              class="flex flex-col items-center sm:items-center lg:items-start gap-[10px] bg-white p-10 xxs:p-5 sm:p-[30px] rounded-lg w-full sm:w-full max-w-[300px] sm:max-w-none lg:max-w-[300px] lg:text-left text-center sm:text-center card"
+              class="flex flex-col items-center lg:items-start gap-[10px] bg-white p-5 sm:p-[30px] rounded-lg w-full lg:max-w-[300px] lg:text-left text-center card"
             >
               <div
                 class="rounded-full max-w-[100px] aspect-square overflow-hidden"
@@ -954,7 +951,7 @@
               </div>
             </div>
             <div
-              class="flex flex-col items-center sm:items-center lg:items-start gap-[10px] bg-white p-10 xxs:p-5 sm:p-[30px] rounded-lg w-full sm:w-full max-w-[300px] sm:max-w-none lg:max-w-[300px] lg:text-left text-center sm:text-center card"
+              class="flex flex-col items-center lg:items-start gap-[10px] bg-white p-5 sm:p-[30px] rounded-lg w-full lg:max-w-[300px] lg:text-left text-center card"
             >
               <div
                 class="rounded-full max-w-[100px] aspect-square overflow-hidden"
@@ -1005,7 +1002,7 @@
       </section>
 
       <!-- Projects Section -->
-      <section class="relative py-20 overflow-hidden">
+      <section class="relative py-10 sm:py-16 lg:py-20 overflow-hidden">
         <div class="mx-auto px-5 max-w-[1320px]">
           <div class="mb-20">
             <div class="flex flex-col items-center gap-[15px]">
@@ -1013,7 +1010,7 @@
                 Latest Projects
               </p>
               <h2
-                class="max-w-[780px] font-semibold text-[42px] text-dark xs:text-[28px] xxs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[42px] xl:text-[42px] text-center"
+                class="max-w-[780px] font-semibold text-[24px] text-dark sm:text-[32px] md:text-[36px] lg:text-[42px] text-center"
               >
                 Check out some of our awesome projects with creative ideas and
                 great design.
@@ -1249,21 +1246,23 @@
 
       <!-- Testimonials Section -->
       <section
-        class="bg-linear-to-b from-primary-gradient to-secondary-gradient py-20"
+        class="bg-linear-to-b from-primary-gradient to-secondary-gradient py-10 sm:py-16 lg:py-20"
       >
         <div class="mx-auto px-5 max-w-[1320px]">
           <div class="flex flex-col items-center gap-[15px]">
             <p class="font-semibold text-primary uppercase">Happy Customers</p>
             <h2
-              class="max-w-[780px] font-semibold text-[42px] text-dark xs:text-[28px] xxs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[42px] xl:text-[42px] text-center"
+              class="max-w-[780px] font-semibold text-[24px] text-dark sm:text-[32px] md:text-[36px] lg:text-[42px] text-center"
             >
               Don't take our word for it. See what customers are saying about
               us.
             </h2>
           </div>
-          <div class="gap-[30px] columns-1 md:columns-2 lg:columns-3 mt-[50px]">
+          <div
+            class="gap-5 sm:gap-[30px] columns-1 md:columns-2 lg:columns-3 mt-8 sm:mt-10 lg:mt-[50px]"
+          >
             <div
-              class="flex flex-col gap-[25px] bg-white mb-[30px] p-10 xxs:p-5 sm:p-[30px] rounded-lg break-inside-avoid card"
+              class="flex flex-col gap-[25px] bg-white mb-[30px] p-5 sm:p-[30px] rounded-lg break-inside-avoid card"
             >
               <div class="flex items-center text-golden">
                 <span class="material-symbols-outlined">star_rate</span>
@@ -1337,7 +1336,7 @@
               </div>
             </div>
             <div
-              class="flex flex-col gap-[25px] bg-white mb-[30px] p-10 xxs:p-5 sm:p-[30px] rounded-lg break-inside-avoid card"
+              class="flex flex-col gap-[25px] bg-white mb-[30px] p-5 sm:p-[30px] rounded-lg break-inside-avoid card"
             >
               <div class="flex items-center text-golden">
                 <span class="material-symbols-outlined">star_rate</span>
@@ -1375,7 +1374,7 @@
               </div>
             </div>
             <div
-              class="flex flex-col gap-[25px] bg-white mb-[30px] p-10 xxs:p-5 sm:p-[30px] rounded-lg break-inside-avoid card"
+              class="flex flex-col gap-[25px] bg-white mb-[30px] p-5 sm:p-[30px] rounded-lg break-inside-avoid card"
             >
               <div class="flex items-center text-golden">
                 <span class="material-symbols-outlined">star_rate</span>
@@ -1412,7 +1411,7 @@
               </div>
             </div>
             <div
-              class="flex flex-col gap-[25px] bg-white mb-[30px] p-10 xxs:p-5 sm:p-[30px] rounded-lg break-inside-avoid card"
+              class="flex flex-col gap-[25px] bg-white mb-[30px] p-5 sm:p-[30px] rounded-lg break-inside-avoid card"
             >
               <div class="flex items-center text-golden">
                 <span class="material-symbols-outlined">star_rate</span>
@@ -1450,7 +1449,7 @@
               </div>
             </div>
             <div
-              class="flex flex-col gap-[25px] bg-white mb-[30px] p-10 xxs:p-5 sm:p-[30px] rounded-lg break-inside-avoid card"
+              class="flex flex-col gap-[25px] bg-white mb-[30px] p-5 sm:p-[30px] rounded-lg break-inside-avoid card"
             >
               <div class="flex items-center text-golden">
                 <span class="material-symbols-outlined">star_rate</span>
@@ -1490,15 +1489,17 @@
       </section>
 
       <!-- FAQ Section -->
-      <section class="relative py-20">
+      <section class="relative py-10 sm:py-16 lg:py-20">
         <div class="mx-auto px-5 max-w-[1320px]">
-          <div class="gap-[50px] grid grid-cols-1 lg:grid-cols-2 mb-20">
+          <div
+            class="gap-8 sm:gap-12 lg:gap-[50px] grid grid-cols-1 lg:grid-cols-2 mb-10 sm:mb-16 lg:mb-20"
+          >
             <div
               class="flex flex-col items-center lg:items-start gap-[15px] lg:text-left text-center"
             >
               <p class="font-semibold text-primary uppercase">FAQ</p>
               <h2
-                class="max-w-[780px] font-semibold text-[42px] text-dark xs:text-[28px] xxs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[42px] xl:text-[42px]"
+                class="max-w-[780px] font-semibold text-[24px] text-dark sm:text-[32px] md:text-[36px] lg:text-[42px]"
               >
                 If you don't see an answer to your question, you can send us an
                 email from our contact form.
