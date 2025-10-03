@@ -123,6 +123,30 @@
         max-height: 200px;
         opacity: 1;
       }
+
+      .faq-card.active {
+        box-shadow: 0px 5px 35px 0px var(--shadow-hover);
+      }
+
+      .faq-card.active .faq-icon {
+        transform: rotate(180deg);
+      }
+
+      .faq-card.active .faq-answer {
+        max-height: 200px;
+        opacity: 1;
+        padding-top: 10px;
+      }
+
+      /* Navigation toggle styles for mobile */
+      @media (max-width: 1023px) {
+        .nav-options.active {
+          opacity: 1;
+          transform: translateY(0);
+          display: flex;
+          visibility: visible;
+        }
+      }
     </style>
   </head>
   <body class="bg-light overflow-x-hidden font-urbanist text-dark">
@@ -140,7 +164,7 @@
             </a>
             <div class="flex items-center gap-5">
               <div
-                class="hidden invisible lg:visible top-[120%] right-0 z-[2] absolute lg:relative lg:flex lg:flex-row flex-col gap-[30px] gap-5 bg-white lg:bg-transparent opacity-0 lg:opacity-100 shadow-card lg:shadow-none p-5 lg:p-0 rounded-lg lg:rounded-none w-[200px] lg:w-auto lg:transform-none transition-all -translate-y-[10px] duration-300 nav-options"
+                class="hidden invisible lg:visible top-[120%] right-0 z-[2] absolute lg:flex lg:flex-row flex-col gap-[30px] gap-5 bg-white lg:bg-transparent opacity-0 opacity-0 lg:opacity-100 shadow-card lg:shadow-none p-5 lg:p-0 rounded-lg lg:rounded-none w-[200px] lg:w-auto transition-all -translate-y-10 lg:translate-y-0 duration-300 nav-options"
               >
                 <div
                   class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer nav-option"
@@ -271,11 +295,11 @@
                   Get Started
                 </button>
               </div>
-              <div class="flex-1 max-w-full lg:max-w-[600px] image-hover">
+              <div class="flex-1 max-w-[400px] lg:max-w-full image-hover">
                 <img
                   src="assets/images/heroImage.png"
                   alt="Hero Image"
-                  class="block w-full max-w-full h-full object-cover"
+                  class="block w-full max-w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
             </div>
@@ -381,7 +405,7 @@
               class="flex lg:flex-row flex-col gap-[100px] sm:gap-10 md:gap-[50px] lg:gap-[100px] mt-[50px]"
             >
               <div class="flex flex-col items-center gap-5">
-                <div class="max-w-[600px] lg:max-w-full">
+                <div class="max-w-[400px] lg:max-w-full">
                   <img
                     src="assets/images/webDesign.png"
                     alt="Web Design"
@@ -414,7 +438,7 @@
                 </a>
               </div>
               <div class="flex flex-col items-center gap-5">
-                <div class="max-w-[600px] lg:max-w-full">
+                <div class="max-w-[400px] lg:max-w-full">
                   <img
                     src="assets/images/graphicDesign.png"
                     alt="Graphic Design"
@@ -447,7 +471,7 @@
                 </a>
               </div>
               <div class="flex flex-col items-center gap-5">
-                <div class="max-w-[600px] lg:max-w-full">
+                <div class="max-w-[400px] lg:max-w-full">
                   <img
                     src="assets/images/3Danimation.png"
                     alt="3D Animation"
@@ -522,7 +546,7 @@
               class="flex flex-col justify-center items-center lg:items-start gap-[30px]"
             >
               <div
-                class="flex sm:flex-row flex-col items-center gap-5 bg-white p-[30px] sm:p-5 rounded-lg w-fit min-w-0 md:min-w-[450px] lg:min-w-[550px] xl:min-w-[550px] max-w-[500px] lg:max-w-none sm:text-center card"
+                class="flex sm:flex-row flex-col items-center gap-5 bg-white p-[30px] sm:p-5 rounded-lg w-auto sm:w-fit min-w-0 md:min-w-[400px] lg:min-w-[450px] max-w-[300px] lg:max-w-none sm:text-left text-center card"
               >
                 <div
                   class="flex-shrink-0 place-items-center grid bg-light-primary rounded-full w-[60px] h-[60px]"
@@ -546,7 +570,7 @@
                 </div>
               </div>
               <div
-                class="flex flex sm:flex-row flex-col sm:flex-col items-center gap-5 bg-white md:ml-0 lg:ml-20 xl:ml-20 p-[30px] sm:p-5 rounded-lg w-fit min-w-0 md:min-w-[450px] lg:min-w-[550px] xl:min-w-[550px] max-w-[500px] lg:max-w-none sm:text-center card"
+                class="flex flex sm:flex-row flex-col sm:flex-col items-center gap-5 bg-white md:ml-0 lg:ml-20 xl:ml-20 p-[30px] sm:p-5 rounded-lg w-auto sm:w-fit min-w-0 md:min-w-[400px] lg:min-w-[450px] max-w-[300px] lg:max-w-none sm:text-left text-center card"
               >
                 <div
                   class="flex-shrink-0 place-items-center grid bg-light-primary rounded-full w-[60px] h-[60px]"
@@ -570,7 +594,7 @@
                 </div>
               </div>
               <div
-                class="flex flex sm:flex-row flex-col sm:flex-col items-center gap-5 bg-white md:ml-0 lg:ml-[30px] xl:ml-[30px] p-[30px] sm:p-5 rounded-lg w-fit min-w-0 md:min-w-[450px] lg:min-w-[550px] xl:min-w-[550px] max-w-[500px] lg:max-w-none sm:text-center card"
+                class="flex flex sm:flex-row flex-col sm:flex-col items-center gap-5 bg-white md:ml-0 lg:ml-[30px] xl:ml-[30px] p-[30px] sm:p-5 rounded-lg w-auto sm:w-fit min-w-0 md:min-w-[400px] lg:min-w-[450px] max-w-[300px] lg:max-w-none sm:text-left text-center card"
               >
                 <div
                   class="flex-shrink-0 place-items-center grid bg-light-primary rounded-full w-[60px] h-[60px]"
@@ -606,11 +630,11 @@
           <div
             class="flex lg:flex-row flex-col items-start gap-[35px] mb-20 lg:text-left text-center"
           >
-            <div class="order-2 lg:order-1 max-w-[600px] image-hover">
+            <div class="order-2 lg:order-1 mx-auto max-w-[400px]">
               <img
                 src="assets/images/chooseUsImage.png"
                 alt="Choose Us Image"
-                class="block w-full max-w-full h-full object-cover"
+                class="block w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div class="flex-1 order-1 lg:order-2">
@@ -1494,26 +1518,24 @@
             </div>
             <div class="flex flex-col gap-[25px] sm:gap-[15px]">
               <div
-                class="flex items-start gap-[15px] bg-white p-5 sm:p-[15px] rounded-lg outline-none transition-all duration-300 cursor-pointer card"
+                class="flex items-start gap-[15px] bg-white p-5 sm:p-[15px] rounded-lg outline-none transition-all duration-300 cursor-pointer card faq-card"
                 tabindex="0"
                 role="button"
                 aria-expanded="false"
               >
-                <div class="w-fit h-[10px] translate-y-[7px] transform">
-                  <img
-                    class="transition-transform duration-300"
-                    src="assets/svg/dropdown.svg"
-                    alt="Dropdown Icon"
-                  />
+                <div
+                  class="flex items-center w-fit h-[10px] transition-transform translate-y-[7px] duration-300 faq-icon"
+                >
+                  <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
                 </div>
-                <div class="flex-1 faq-card">
+                <div class="flex-1">
                   <h3
-                    class="font-semibold text-[18px] text-dark sm:text-[16px]"
+                    class="font-semibold text-[18px] text-dark sm:text-[16px] faq-question"
                   >
                     How do I get my subscription receipt?
                   </h3>
                   <p
-                    class="overflow-hidden text-[16px] text-dark-secondary sm:text-[15px] leading-[26px] sm:leading-[24px] faq-answer height-0"
+                    class="max-h-0 overflow-hidden text-[16px] text-dark-secondary sm:text-[15px] leading-[26px] sm:leading-[24px] transition-all duration-300 faq-answer"
                   >
                     Aenean lacinia bibendum nulla sed consectetur. Cras justo
                     odio, dapibus ac facilisis in, egestas eget quam. Donec sed
@@ -1523,26 +1545,24 @@
                 </div>
               </div>
               <div
-                class="flex items-start gap-[15px] bg-white p-5 sm:p-[15px] rounded-lg outline-none transition-all duration-300 cursor-pointer card"
+                class="flex items-start gap-[15px] bg-white p-5 sm:p-[15px] rounded-lg outline-none transition-all duration-300 cursor-pointer card faq-card"
                 tabindex="0"
                 role="button"
                 aria-expanded="false"
               >
-                <div class="w-fit h-[10px] translate-y-[7px] transform">
-                  <img
-                    class="transition-transform duration-300"
-                    src="assets/svg/dropdown.svg"
-                    alt="Dropdown Icon"
-                  />
+                <div
+                  class="flex items-center w-fit h-[10px] transition-transform translate-y-[7px] duration-300 faq-icon"
+                >
+                  <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
                 </div>
-                <div class="flex-1 faq-card">
+                <div class="flex-1">
                   <h3
-                    class="font-semibold text-[18px] text-dark sm:text-[16px]"
+                    class="font-semibold text-[18px] text-dark sm:text-[16px] faq-question"
                   >
                     Are there any discounts for people in need?
                   </h3>
                   <p
-                    class="overflow-hidden text-[16px] text-dark-secondary sm:text-[15px] leading-[26px] sm:leading-[24px] faq-answer height-0"
+                    class="max-h-0 overflow-hidden text-[16px] text-dark-secondary sm:text-[15px] leading-[26px] sm:leading-[24px] transition-all duration-300 faq-answer"
                   >
                     Aenean lacinia bibendum nulla sed consectetur. Cras justo
                     odio, dapibus ac facilisis in, egestas eget quam. Donec sed
@@ -1552,26 +1572,24 @@
                 </div>
               </div>
               <div
-                class="flex items-start gap-[15px] bg-white p-5 sm:p-[15px] rounded-lg outline-none transition-all duration-300 cursor-pointer card"
+                class="flex items-start gap-[15px] bg-white p-5 sm:p-[15px] rounded-lg outline-none transition-all duration-300 cursor-pointer card faq-card"
                 tabindex="0"
                 role="button"
                 aria-expanded="false"
               >
-                <div class="w-fit h-[10px] translate-y-[7px] transform">
-                  <img
-                    class="transition-transform duration-300"
-                    src="assets/svg/dropdown.svg"
-                    alt="Dropdown Icon"
-                  />
+                <div
+                  class="flex items-center w-fit h-[10px] transition-transform translate-y-[7px] duration-300 faq-icon"
+                >
+                  <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
                 </div>
-                <div class="flex-1 faq-card">
+                <div class="flex-1">
                   <h3
-                    class="font-semibold text-[18px] text-dark sm:text-[16px]"
+                    class="font-semibold text-[18px] text-dark sm:text-[16px] faq-question"
                   >
                     Do you offer a free trial edit?
                   </h3>
                   <p
-                    class="overflow-hidden text-[16px] text-dark-secondary sm:text-[15px] leading-[26px] sm:leading-[24px] faq-answer height-0"
+                    class="max-h-0 overflow-hidden text-[16px] text-dark-secondary sm:text-[15px] leading-[26px] sm:leading-[24px] transition-all duration-300 faq-answer"
                   >
                     Aenean lacinia bibendum nulla sed consectetur. Cras justo
                     odio, dapibus ac facilisis in, egestas eget quam. Donec sed
@@ -1581,26 +1599,24 @@
                 </div>
               </div>
               <div
-                class="flex items-start gap-[15px] bg-white p-5 sm:p-[15px] rounded-lg outline-none transition-all duration-300 cursor-pointer card"
+                class="flex items-start gap-[15px] bg-white p-5 sm:p-[15px] rounded-lg outline-none transition-all duration-300 cursor-pointer card faq-card"
                 tabindex="0"
                 role="button"
                 aria-expanded="false"
               >
-                <div class="w-fit h-[10px] translate-y-[7px] transform">
-                  <img
-                    class="transition-transform duration-300"
-                    src="assets/svg/dropdown.svg"
-                    alt="Dropdown Icon"
-                  />
+                <div
+                  class="flex items-center w-fit h-[10px] transition-transform translate-y-[7px] duration-300 faq-icon"
+                >
+                  <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
                 </div>
-                <div class="flex-1 faq-card">
+                <div class="flex-1">
                   <h3
                     class="font-semibold text-[18px] text-dark sm:text-[16px] faq-question"
                   >
                     How do I reset my Account password?
                   </h3>
                   <p
-                    class="overflow-hidden text-[16px] text-dark-secondary sm:text-[15px] leading-[26px] sm:leading-[24px] faq-answer height-0"
+                    class="max-h-0 overflow-hidden text-[16px] text-dark-secondary sm:text-[15px] leading-[26px] sm:leading-[24px] transition-all duration-300 faq-answer"
                   >
                     Aenean lacinia bibendum nulla sed consectetur. Cras justo
                     odio, dapibus ac facilisis in, egestas eget quam. Donec sed
