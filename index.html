@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sandbox</title>
+    <title>Sandbox | Tailwind CSS Version</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,19 +12,13 @@
       rel="stylesheet"
     />
 
-    <!-- Google Icons -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu,star_rate"
     />
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/styles.css" />
-
-    <!-- Tailwind CSS Configuration -->
     <style type="text/tailwindcss">
       @theme {
         --color-primary: #5eb9f0;
@@ -38,210 +31,125 @@
         --color-white: #ffffff;
         --color-black: #000000;
         --color-golden: #fcc032;
-
-        /* Gradients */
         --color-primary-gradient: #f0f8fe;
-        --color-secondary-gradient: #c1c1c1;
+        --color-secondary-gradient: #e0e0e0;
 
-        /* Shadows */
-        --color-shadow: #1e222812;
-        --color-shadow-hover: #1e222833;
-
-        /* Fonts */
-        --font-urbanist: "Urbanist";
-
-        /* Box shadows */
-        --shadow-card-hover: 0px 5px 35px 0px var(--color-shadow-hover);
-        --shadow-button: 0px 5px 15px 0px var(--color-primary);
-
-        /* Screens */
-        --screen-xs: 480px;
-        --screen-xxs: 360px;
+        --font-urbanist: "Urbanist", sans-serif;
+        --shadow-custom: 0px 5px 35px 0px rgba(30, 34, 40, 0.07);
+        --shadow-custom-hover: 0px 5px 35px 0px rgba(30, 34, 40, 0.2);
+        --shadow-primary: 0px 5px 15px 0px #5eb9f0;
       }
+    </style>
 
-      /* Components */
-      @layer components {
-        .button {
-          border: 1px solid transparent;
-          cursor: pointer;
-          padding: 15px 20px;
-          border-radius: 50px;
-          font-size: 17px;
-          font-weight: 600;
-          width: fit-content;
-          transition: box-shadow 0.3s ease;
-        }
-        .card {
-          box-shadow: 0px 5px 35px 0px var(--color-shadow);
-          border-radius: 8px;
-          background-color: var(--white);
-          transition: box-shadow 0.3s ease;
-        }
-        .card:hover {
-          box-shadow: 0px 5px 35px 0px var(--color-shadow-hover);
-        }
-      }
-
-      /* Utilities */
-      @layer utilities {
-        .shadow-button-hover:hover {
-          box-shadow: 0px 5px 15px 0px var(--color-primary);
-        }
-      }
-
-      /* Google icons styling */
+    <style>
       .material-symbols-outlined {
         font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
       }
-
-      .choose-us-detail-content {
-        transition: max-height 0.4s ease, opacity 0.3s ease,
-          margin-top 0.3s ease;
-        opacity: 0;
-      }
-      .choose-us-detail.active .choose-us-icon {
-        transform: rotate(180deg);
-      }
-
-      .choose-us-detail.active .choose-us-detail-label {
-        color: var(--primary);
-      }
-      .choose-us-detail.active .choose-us-detail-content {
-        max-height: 200px;
-        opacity: 1;
-      }
-
-      .faq-card.active {
-        box-shadow: 0px 5px 35px 0px var(--shadow-hover);
-      }
-
-      .faq-card.active .faq-icon {
-        transform: rotate(180deg);
-      }
-
-      .faq-card.active .faq-answer {
-        max-height: 200px;
-        opacity: 1;
-        padding-top: 10px;
-      }
-
-      @media (max-width: 1023px) {
-        .nav-options.active {
-          opacity: 1;
-          transform: translateY(0);
-          display: flex;
-          visibility: visible;
-        }
-      }
-
-      @media (max-width: 639px) {
-        h1 {
-          line-height: 1.2;
-        }
-        h2 {
-          line-height: 1.3;
-        }
-        @media (max-width: 768px) {
-          .button {
-            padding: 12px 18px;
-            font-size: 16px;
-          }
-        }
-        @media (max-width: 480px) {
-          .button {
-            padding: 12px 18px;
-            font-size: 16px;
-          }
-        }
-        @media (max-width: 360px) {
-          .button {
-            padding: 10px 15px;
-            font-size: 15px;
-          }
-        }
-      }
     </style>
   </head>
-  <body class="bg-light overflow-x-hidden font-urbanist text-dark">
+  <body class="bg-light font-urbanist overflow-x-hidden">
     <header>
-      <!-- Navigation Bar -->
-      <nav class="bg-light py-[15px]">
-        <div class="mx-auto px-5 max-w-[1320px]">
-          <div class="relative flex justify-between items-center">
-            <a href="#" class="w-auto max-h-[26px]">
+      <nav class="py-[15px] bg-light">
+        <div class="max-w-[1320px] mx-auto px-5">
+          <div class="flex items-center justify-between">
+            <a href="#" class="nav-left max-h-[26px]">
               <img
                 src="assets/images/logo.png"
                 alt="Navigation Logo"
-                class="block w-full max-w-full h-full object-cover"
+                class="h-full w-auto object-contain"
               />
             </a>
-            <div class="relative flex items-center gap-5">
+            <div class="nav-right flex items-center gap-2.5 lg:gap-10 relative">
               <div
-                class="hidden invisible lg:visible top-full right-0 z-50 lg:static absolute lg:flex lg:flex-row flex-col gap-5 lg:gap-[30px] bg-white lg:bg-transparent opacity-0 lg:opacity-100 shadow-lg lg:shadow-none p-5 lg:p-0 rounded-lg lg:rounded-none w-[220px] lg:w-auto transition-all -translate-y-2 lg:translate-y-0 duration-300 nav-options"
+                class="nav-options hidden lg:flex gap-[30px] absolute lg:relative top-[140%] right-0 bg-white shadow-custom rounded-lg p-5 flex-col lg:flex-row lg:p-0 lg:shadow-none lg:bg-transparent w-[200px] lg:w-auto opacity-0 invisible lg:opacity-100 lg:visible transform -translate-y-2.5 lg:transform-none transition-all duration-300 ease-in-out z-20"
               >
                 <div
-                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer"
+                  class="nav-option group flex items-center gap-2 text-[17px] font-semibold cursor-pointer text-dark transition-colors duration-300 hover:text-primary"
                 >
-                  <span>Demos</span>
+                  <div class="nav-option-lable">Demos</div>
                   <div
-                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300"
+                    class="h-2 w-max transition-transform duration-300 group-hover:rotate-180"
                   >
-                    <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
+                    <img
+                      src="assets/svg/dropdown.svg"
+                      alt="Dropdown Icon"
+                      class="h-full"
+                    />
                   </div>
                 </div>
                 <div
-                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer"
+                  class="nav-option group flex items-center gap-2 text-[17px] font-semibold cursor-pointer text-dark transition-colors duration-300 hover:text-primary"
                 >
-                  <span>Pages</span>
+                  <div class="nav-option-lable">Pages</div>
                   <div
-                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300"
+                    class="h-2 w-max transition-transform duration-300 group-hover:rotate-180"
                   >
-                    <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
+                    <img
+                      src="assets/svg/dropdown.svg"
+                      alt="Dropdown Icon"
+                      class="h-full"
+                    />
                   </div>
                 </div>
                 <div
-                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer"
+                  class="nav-option group flex items-center gap-2 text-[17px] font-semibold cursor-pointer text-dark transition-colors duration-300 hover:text-primary"
                 >
-                  <span>Projects</span>
+                  <div class="nav-option-lable">Projects</div>
                   <div
-                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300"
+                    class="h-2 w-max transition-transform duration-300 group-hover:rotate-180"
                   >
-                    <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
+                    <img
+                      src="assets/svg/dropdown.svg"
+                      alt="Dropdown Icon"
+                      class="h-full"
+                    />
                   </div>
                 </div>
                 <div
-                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer"
+                  class="nav-option group flex items-center gap-2 text-[17px] font-semibold cursor-pointer text-dark transition-colors duration-300 hover:text-primary"
                 >
-                  <span>Blog</span>
+                  <div class="nav-option-lable">Blog</div>
                   <div
-                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300"
+                    class="h-2 w-max transition-transform duration-300 group-hover:rotate-180"
                   >
-                    <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
+                    <img
+                      src="assets/svg/dropdown.svg"
+                      alt="Dropdown Icon"
+                      class="h-full"
+                    />
                   </div>
                 </div>
                 <div
-                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer"
+                  class="nav-option group flex items-center gap-2 text-[17px] font-semibold cursor-pointer text-dark transition-colors duration-300 hover:text-primary"
                 >
-                  <span>Blocks</span>
+                  <div class="nav-option-lable">Blocks</div>
                   <div
-                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300"
+                    class="h-2 w-max transition-transform duration-300 group-hover:rotate-180"
                   >
-                    <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
+                    <img
+                      src="assets/svg/dropdown.svg"
+                      alt="Dropdown Icon"
+                      class="h-full"
+                    />
                   </div>
                 </div>
                 <div
-                  class="group flex items-center gap-2 font-semibold text-[17px] text-dark hover:text-primary transition-colors duration-300 cursor-pointer"
+                  class="nav-option group flex items-center gap-2 text-[17px] font-semibold cursor-pointer text-dark transition-colors duration-300 hover:text-primary"
                 >
-                  <span>Documentation</span>
+                  <div class="nav-option-lable">Documentation</div>
                   <div
-                    class="w-max h-2 group-hover:rotate-180 transition-transform duration-300"
+                    class="h-2 w-max transition-transform duration-300 group-hover:rotate-180"
                   >
-                    <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
+                    <img
+                      src="assets/svg/dropdown.svg"
+                      alt="Dropdown Icon"
+                      class="h-full"
+                    />
                   </div>
                 </div>
               </div>
               <button
-                class="lg:hidden flex flex-col justify-center items-center bg-light-primary hover:shadow-button px-[15px] py-[15px] border border-transparent rounded-[50px] w-fit font-semibold text-[17px] text-primary transition-all duration-300 cursor-pointer"
+                class="button--secondary lg:hidden flex justify-center items-center border border-transparent cursor-pointer px-5 py-[15px] rounded-full text-[17px] font-semibold w-fit transition-shadow duration-300 ease-in-out bg-light-primary text-primary hover:shadow-primary"
                 id="navToggle"
                 aria-label="Toggle navigation menu"
                 title="Toggle navigation menu"
@@ -249,7 +157,7 @@
                 <span class="material-symbols-outlined"> menu </span>
               </button>
               <button
-                class="bg-primary hover:shadow-button px-5 py-[15px] border border-transparent rounded-[50px] w-fit font-semibold text-[17px] text-white transition-all duration-300 cursor-pointer"
+                class="button--primary hidden sm:block border border-transparent cursor-pointer px-5 py-[15px] rounded-full text-[17px] font-semibold w-fit transition-shadow duration-300 ease-in-out bg-primary text-light hover:shadow-primary"
               >
                 Contact
               </button>
@@ -260,240 +168,199 @@
     </header>
 
     <main>
-      <!-- Hero Section -->
-      <section class="relative py-10 sm:py-16 lg:py-20">
-        <div class="mx-auto px-5 max-w-[1320px]">
-          <div
-            class="flex flex-col gap-10 sm:gap-16 lg:gap-[90px] mb-10 sm:mb-16 lg:mb-20"
-          >
-            <div
-              class="flex lg:flex-row flex-col items-center gap-[35px] lg:text-left text-center"
-            >
+      <section class="hero-section relative py-16 md:py-20">
+        <div class="max-w-[1320px] mx-auto px-5">
+          <div class="hero-wrapper flex flex-col gap-[90px] mb-16 md:mb-20">
+            <div class="hero-main flex flex-col lg:flex-row gap-9 items-center">
               <div
-                class="flex flex-col items-center lg:items-start gap-[30px] max-w-[500px]"
+                class="hero-head flex flex-col gap-[30px] max-w-lg items-center lg:items-start text-center lg:text-left"
               >
                 <h1
-                  class="font-semibold text-[30px] text-dark xs:text-[36px] sm:text-[40px] md:text-[46px] lg:text-[54px] leading-[1.1]"
+                  class="hero-title text-[40px] md:text-[46px] lg:text-[54px] font-semibold text-dark leading-tight"
                 >
                   A digital agency specializing on
                   <span class="text-primary">mobile design</span>
                 </h1>
                 <p
-                  class="font-medium text-[16px] text-dark-secondary sm:text-[18px] md:text-[20px] lg:text-[22px] leading-[1.4]"
+                  class="hero-desc text-xl md:text-2xl font-medium text-dark-secondary leading-snug"
                 >
                   We are an award winning design agency that strongly believes
                   in the power of creative ideas.
                 </p>
                 <button
-                  class="bg-primary hover:shadow-button px-5 py-[15px] border border-transparent rounded-[50px] w-fit font-semibold text-[17px] text-light transition-all duration-300 cursor-pointer"
+                  class="button--primary border border-transparent cursor-pointer px-5 py-[15px] rounded-full text-[17px] font-semibold w-fit transition-shadow duration-300 ease-in-out bg-primary text-light hover:shadow-primary"
                 >
                   Get Started
                 </button>
               </div>
-              <div class="flex-1 max-w-[400px] lg:max-w-full">
+              <div class="hero-image-wrapper flex-1 max-w-full lg:max-w-none">
                 <img
                   src="assets/images/heroImage.png"
                   alt="Hero Image"
-                  class="block w-full max-w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
                 />
               </div>
             </div>
-            <div class="flex flex-col items-center gap-[30px]">
-              <h4 class="font-medium text-[17px] text-dark-secondary">
+            <div class="hero-client flex flex-col items-center gap-[30px]">
+              <h4
+                class="hero-client-title font-medium text-[17px] text-dark-secondary"
+              >
                 Trusted by over 2K+ clients across the world
               </h4>
               <div
-                class="flex flex-wrap justify-center items-center gap-5 lg:gap-[30px]"
+                class="hero-client-logos flex items-center gap-5 sm:gap-[30px] flex-wrap justify-center"
               >
-                <div
-                  class="max-w-20 sm:max-w-[100px] md:max-w-[120px] lg:max-w-[150px]"
-                >
-                  <img
-                    src="assets/images/client1.png"
-                    alt="Client 1"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
+                <div class="max-w-[100px] sm:max-w-[150px]">
+                  <img src="assets/images/client1.png" alt="Client 1" />
                 </div>
-                <div
-                  class="max-w-[150px] xs:max-w-20 sm:max-w-[100px] md:max-w-[120px] lg:max-w-[150px]"
-                >
-                  <img
-                    src="assets/images/client2.png"
-                    alt="Client 2"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
+                <div class="max-w-[100px] sm:max-w-[150px]">
+                  <img src="assets/images/client2.png" alt="Client 2" />
                 </div>
-                <div
-                  class="max-w-[150px] xs:max-w-20 sm:max-w-[100px] md:max-w-[120px] lg:max-w-[150px]"
-                >
-                  <img
-                    src="assets/images/client3.png"
-                    alt="Client 3"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
+                <div class="max-w-[100px] sm:max-w-[150px]">
+                  <img src="assets/images/client3.png" alt="Client 3" />
                 </div>
-                <div
-                  class="max-w-[150px] xs:max-w-20 sm:max-w-[100px] md:max-w-[120px] lg:max-w-[150px]"
-                >
-                  <img
-                    src="assets/images/client4.png"
-                    alt="Client 4"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
+                <div class="max-w-[100px] sm:max-w-[150px]">
+                  <img src="assets/images/client4.png" alt="Client 4" />
                 </div>
-                <div
-                  class="max-w-[150px] xs:max-w-20 sm:max-w-[100px] md:max-w-[120px] lg:max-w-[150px]"
-                >
-                  <img
-                    src="assets/images/client5.png"
-                    alt="Client 5"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
+                <div class="max-w-[100px] sm:max-w-[150px]">
+                  <img src="assets/images/client5.png" alt="Client 5" />
                 </div>
-                <div
-                  class="max-w-[150px] xs:max-w-20 sm:max-w-[100px] md:max-w-[120px] lg:max-w-[150px]"
-                >
-                  <img
-                    src="assets/images/client6.png"
-                    alt="Client 6"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
+                <div class="max-w-[100px] sm:max-w-[150px]">
+                  <img src="assets/images/client6.png" alt="Client 6" />
                 </div>
-                <div
-                  class="max-w-[150px] xs:max-w-20 sm:max-w-[100px] md:max-w-[120px] lg:max-w-[150px]"
-                >
-                  <img
-                    src="assets/images/client7.png"
-                    alt="Client 7"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
+                <div class="max-w-[100px] sm:max-w-[150px]">
+                  <img src="assets/images/client7.png" alt="Client 7" />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="bottom-0 -z-10 absolute w-full max-h-[120px]">
+        <div class="absolute w-full bottom-0 max-h-[120px] -z-10">
           <img
             src="assets/svg/decoration1.svg"
             alt="Decoration image 1"
-            class="block w-full max-w-full h-full object-cover"
+            class="w-full h-full object-cover"
           />
         </div>
       </section>
 
-      <!-- About Section -->
       <section
-        class="bg-linear-to-b from-primary-gradient to-secondary-gradient py-10 sm:py-16 lg:py-20"
+        class="about-section py-16 md:py-20 bg-[linear-gradient(to_bottom,theme(colors.primary-gradient),theme(colors.secondary-gradient))]"
       >
-        <div class="mx-auto px-5 max-w-[1320px]">
-          <div class="flex flex-col items-center gap-[15px]">
-            <div class="flex flex-col items-center gap-[15px]">
-              <p class="font-semibold text-primary uppercase">What We Do</p>
+        <div class="max-w-[1320px] mx-auto px-5">
+          <div class="about-wrapper">
+            <div
+              class="section-head flex flex-col gap-4 items-center text-center"
+            >
+              <p class="section-subtitle font-semibold uppercase text-primary">
+                What We Do
+              </p>
               <h2
-                class="max-w-[780px] font-semibold text-[24px] text-dark sm:text-[32px] md:text-[36px] lg:text-[42px] text-center"
+                class="section-title font-semibold text-3xl md:text-4xl max-w-3xl text-dark"
               >
                 The service we offer is specifically designed to meet your
                 needs.
               </h2>
             </div>
             <div
-              class="flex lg:flex-row flex-col gap-8 lg:gap-[100px] mt-8 sm:mt-10 lg:mt-[50px]"
+              class="section-body flex flex-col lg:flex-row gap-12 lg:gap-24 mt-12"
             >
-              <div class="flex flex-col items-center gap-5">
-                <div class="w-full max-w-[400px]">
+              <div class="about-card group flex flex-col items-center gap-5">
+                <div class="about-card-image-wrapper max-w-full lg:max-w-none">
                   <img
                     src="assets/images/webDesign.png"
                     alt="Web Design"
-                    class="block w-full max-w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    class="transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <h3 class="font-semibold text-[23px] text-dark sm:text-[20px]">
+                <h3 class="about-card-title text-2xl font-semibold text-dark">
                   Web Design
                 </h3>
                 <p
-                  class="font-medium text-[17px] text-dark-secondary sm:text-[16px] text-center leading-[28.9px]"
+                  class="about-card-desc font-medium leading-loose text-lg text-center text-dark-secondary"
                 >
                   Nulla vitae elit libero, a pharetra augue. Donec id elit non
                   mi porta gravida at eget. Fusce dapibus tellus.
                 </p>
                 <a
                   href="#"
-                  class="group flex items-center gap-2 w-fit font-semibold text-primary no-underline"
+                  class="group text-primary font-semibold no-underline w-fit flex items-center gap-2"
                 >
                   Learn More
                   <div
-                    class="w-3 h-3 transition-transform group-hover:translate-x-1 duration-300"
+                    class="about-link-icon-wrapper w-3 h-3 transition-transform duration-300 group-hover:translate-x-1"
                   >
                     <img
                       src="assets/svg/linkArrow.svg"
                       alt="Link Arrow"
-                      class="block w-full max-w-full h-full object-cover"
+                      class="w-full h-full"
                     />
                   </div>
                 </a>
               </div>
-              <div class="flex flex-col items-center gap-5">
-                <div class="w-full max-w-[400px]">
+              <div class="about-card group flex flex-col items-center gap-5">
+                <div class="about-card-image-wrapper max-w-full lg:max-w-none">
                   <img
                     src="assets/images/graphicDesign.png"
                     alt="Graphic Design"
-                    class="block w-full max-w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    class="transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <h3 class="font-semibold text-[23px] text-dark sm:text-[20px]">
+                <h3 class="about-card-title text-2xl font-semibold text-dark">
                   Graphic Design
                 </h3>
                 <p
-                  class="font-medium text-[17px] text-dark-secondary sm:text-[16px] text-center leading-[28.9px]"
+                  class="about-card-desc font-medium leading-loose text-lg text-center text-dark-secondary"
                 >
                   Maecenas faucibus mollis interdum. Vivamus sagittis lacus vel
                   augue laoreet. Sed posuere consectetur.
                 </p>
                 <a
                   href="#"
-                  class="group flex items-center gap-2 w-fit font-semibold text-primary no-underline"
+                  class="group text-primary font-semibold no-underline w-fit flex items-center gap-2"
                 >
                   Learn More
                   <div
-                    class="w-3 h-3 transition-transform group-hover:translate-x-1 duration-300"
+                    class="about-link-icon-wrapper w-3 h-3 transition-transform duration-300 group-hover:translate-x-1"
                   >
                     <img
                       src="assets/svg/linkArrow.svg"
                       alt="Link Arrow"
-                      class="block w-full max-w-full h-full object-cover"
+                      class="w-full h-full"
                     />
                   </div>
                 </a>
               </div>
-              <div class="flex flex-col items-center gap-5">
-                <div class="w-full max-w-[400px]">
+              <div class="about-card group flex flex-col items-center gap-5">
+                <div class="about-card-image-wrapper max-w-full lg:max-w-none">
                   <img
                     src="assets/images/3Danimation.png"
                     alt="3D Animation"
-                    class="block w-full max-w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    class="transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <h3 class="font-semibold text-[23px] text-dark sm:text-[20px]">
+                <h3 class="about-card-title text-2xl font-semibold text-dark">
                   3D Animation
                 </h3>
                 <p
-                  class="font-medium text-[17px] text-dark-secondary sm:text-[16px] text-center leading-[28.9px]"
+                  class="about-card-desc font-medium leading-loose text-lg text-center text-dark-secondary"
                 >
                   Cras justo odio, dapibus ac facilisis in, egestas eget quam.
                   Praesent commodo cursus magna scelerisque.
                 </p>
                 <a
                   href="#"
-                  class="group flex items-center gap-2 w-fit font-semibold text-primary no-underline"
+                  class="group text-primary font-semibold no-underline w-fit flex items-center gap-2"
                 >
                   Learn More
                   <div
-                    class="w-3 h-3 transition-transform group-hover:translate-x-1 duration-300"
+                    class="about-link-icon-wrapper w-3 h-3 transition-transform duration-300 group-hover:translate-x-1"
                   >
                     <img
-                      class="block w-full max-w-full h-full object-cover"
+                      class="about-link-icon"
                       src="assets/svg/linkArrow.svg"
                       alt="Link Arrow"
+                      class="w-full h-full"
                     />
                   </div>
                 </a>
@@ -503,23 +370,22 @@
         </div>
       </section>
 
-      <!-- Strategy Section -->
-      <section class="py-10 sm:py-16 lg:py-20">
-        <div class="mx-auto px-5 max-w-[1320px]">
-          <div
-            class="gap-8 sm:gap-10 lg:gap-[50px] grid grid-cols-1 lg:grid-cols-2"
-          >
+      <section class="strategy-section py-16 md:py-20">
+        <div class="max-w-[1320px] mx-auto px-5">
+          <div class="strategy-wrapper grid grid-cols-1 lg:grid-cols-2 gap-9">
             <div
-              class="flex flex-col items-center lg:items-start gap-[15px] lg:text-left text-center"
+              class="section-head flex flex-col gap-4 text-center lg:text-left items-center lg:items-start"
             >
-              <p class="font-semibold text-primary uppercase">Our Strategy</p>
+              <p class="section-subtitle font-semibold uppercase text-primary">
+                Our Strategy
+              </p>
               <h2
-                class="max-w-[780px] font-semibold text-[24px] text-dark sm:text-[32px] md:text-[36px] lg:text-[42px]"
+                class="section-title font-semibold text-3xl md:text-4xl max-w-3xl text-dark"
               >
                 Here are 3 working steps to organize our projects.
               </h2>
               <p
-                class="font-medium text-[17px] text-dark-secondary sm:text-[16px] leading-[28.9px]"
+                class="section-desc font-medium text-[17px] leading-loose text-dark-secondary"
               >
                 Aenean eu leo quam. Pellentesque ornare sem lacinia quam
                 venenatis vestibulum. Etiam porta sem malesuada magna mollis
@@ -527,88 +393,88 @@
                 Nullam quis risus eget urna mollis.
               </p>
               <p
-                class="font-medium text-[17px] text-dark-secondary sm:text-[16px] leading-[28.9px]"
+                class="section-desc font-medium text-[17px] leading-loose text-dark-secondary"
               >
                 Nullam id dolor id nibh ultricies vehicula ut id elit.
                 Vestibulum id ligula porta felis euismod semper. Aenean lacinia
                 bibendum nulla sed consectetur.
               </p>
               <button
-                class="bg-primary hover:shadow-button px-5 py-[15px] border border-transparent rounded-[50px] w-fit font-semibold text-[17px] text-light transition-all duration-300 cursor-pointer"
+                class="button--primary border border-transparent cursor-pointer px-5 py-[15px] rounded-full text-[17px] font-semibold w-fit transition-shadow duration-300 ease-in-out bg-primary text-light hover:shadow-primary"
               >
                 Get Started
               </button>
             </div>
             <div
-              class="flex flex-col justify-center items-center lg:items-start gap-6 sm:gap-8 lg:gap-[30px]"
+              class="section-body strategy-cards flex flex-col gap-[30px] justify-center items-center lg:items-start"
             >
               <div
-                class="flex sm:flex-row flex-col items-center gap-5 bg-white p-5 rounded-lg w-full sm:w-auto sm:text-left text-center card"
+                class="strategy-card group p-[30px] flex items-center gap-5 w-full max-w-md lg:max-w-none lg:w-fit lg:min-w-[450px] xl:min-w-[550px] shadow-custom rounded-lg bg-white transition-shadow duration-300 ease-in-out hover:shadow-custom-hover"
               >
                 <div
-                  class="flex-shrink-0 place-items-center grid bg-light-primary rounded-full w-[60px] h-[60px]"
+                  class="strategy-card-number-wrapper grid place-items-center rounded-full bg-light-primary w-[60px] h-[60px] flex-shrink-0"
                 >
                   <span
-                    class="font-semibold text-[22px] text-primary sm:text-[20px]"
+                    class="strategy-card-number font-semibold text-2xl text-primary"
                     >01</span
                   >
                 </div>
-                <div class="flex flex-col">
+                <div class="strategy-card-content">
                   <h3
-                    class="font-semibold text-[20px] text-dark leading-[29px]"
+                    class="strategy-card-title font-semibold text-xl leading-7 text-dark"
                   >
                     Collect Ideas
                   </h3>
                   <p
-                    class="font-medium text-[17px] text-dark-secondary sm:text-[15px] leading-[28.9px] sm:leading-[26px]"
+                    class="strategy-card-desc font-medium text-[17px] leading-loose text-dark-secondary"
                   >
                     Nulla vitae elit libero pharetra augue dapibus.
                   </p>
                 </div>
               </div>
               <div
-                class="flex sm:flex-row flex-col items-center gap-5 bg-white lg:ml-20 p-5 rounded-lg w-full sm:w-auto sm:text-left text-center card"
+                class="strategy-card group p-[30px] flex items-center gap-5 w-full max-w-md lg:max-w-none lg:w-fit lg:min-w-[450px] xl:min-w-[550px] shadow-custom rounded-lg bg-white transition-shadow duration-300 ease-in-out hover:shadow-custom-hover lg:ml-20"
               >
                 <div
-                  class="flex-shrink-0 place-items-center grid bg-light-primary rounded-full w-[60px] h-[60px]"
+                  class="strategy-card-number-wrapper grid place-items-center rounded-full bg-light-primary w-[60px] h-[60px] flex-shrink-0"
                 >
                   <span
-                    class="font-semibold text-[22px] text-primary sm:text-[20px]"
+                    class="strategy-card-number font-semibold text-2xl text-primary"
                     >02</span
                   >
                 </div>
-                <div class="flex flex-col">
+                <div class="strategy-card-content">
                   <h3
-                    class="font-semibold text-[20px] text-dark leading-[29px]"
+                    class="strategy-card-title font-semibold text-xl leading-7 text-dark"
                   >
                     Data Analysis
                   </h3>
                   <p
-                    class="font-medium text-[17px] text-dark-secondary sm:text-[15px] leading-[28.9px] sm:leading-[26px]"
+                    class="strategy-card-desc font-medium text-[17px] leading-loose text-dark-secondary"
                   >
                     Vivamus sagittis lacus vel augue laoreet.
                   </p>
                 </div>
               </div>
               <div
-                class="flex sm:flex-row flex-col items-center gap-5 bg-white lg:ml-[30px] p-5 rounded-lg w-full sm:w-auto sm:text-left text-center card"
+                class="strategy-card group p-[30px] flex items-center gap-5 w-full max-w-md lg:max-w-none lg:w-fit lg:min-w-[450px] xl:min-w-[550px] shadow-custom rounded-lg bg-white transition-shadow duration-300 ease-in-out hover:shadow-custom-hover lg:ml-8"
               >
                 <div
-                  class="flex-shrink-0 place-items-center grid bg-light-primary rounded-full w-[60px] h-[60px]"
+                  class="strategy-card-number-wrapper grid place-items-center rounded-full bg-light-primary w-[60px] h-[60px] flex-shrink-0"
                 >
                   <span
-                    class="font-semibold text-[22px] text-primary sm:text-[20px]"
+                    class="strategy-card-number font-semibold text-2xl text-primary"
                     >03</span
                   >
                 </div>
-                <div class="flex flex-col">
+                <div class="strategy-card-content">
                   <h3
-                    class="font-semibold text-[20px] text-dark leading-[29px]"
+                    class="strategy-card-title font-semibold text-xl leading-7 text-dark"
                   >
                     Finalize Product
                   </h3>
                   <p
-                    class="font-medium text-[17px] text-dark-secondary sm:text-[15px] leading-[28.9px] sm:leading-[26px]"
+                    class="strategy-card-desc font-medium text-[17px] leading-loose text-dark-secondary"
                   >
                     Cras mattis consectetur purus sit amet.
                   </p>
@@ -619,52 +485,52 @@
         </div>
       </section>
 
-      <!-- Choose Us Section -->
       <section
-        class="relative bg-linear-to-b from-primary-gradient to-secondary-gradient py-10 sm:py-16 lg:py-20"
+        class="choose-us-section py-16 md:py-20 bg-[linear-gradient(to_top,theme(colors.primary-gradient),theme(colors.secondary-gradient))] relative"
       >
-        <div class="mx-auto px-5 max-w-[1320px]">
+        <div class="max-w-[1320px] mx-auto px-5">
           <div
-            class="flex lg:flex-row flex-col items-start gap-8 sm:gap-10 lg:gap-[35px] mb-10 sm:mb-16 lg:mb-20 lg:text-left text-center"
+            class="choose-us-wrapper flex flex-col lg:flex-row gap-9 items-center lg:items-start mb-16 md:mb-20"
           >
-            <div class="order-2 lg:order-1 mx-auto w-full max-w-[400px]">
+            <div
+              class="choose-us-image-wrapper flex-1 max-w-[600px] lg:max-w-none order-2 lg:order-1"
+            >
               <img
                 src="assets/images/chooseUsImage.png"
                 alt="Choose Us Image"
-                class="block w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                class="transition-transform duration-300 ease-in-out hover:scale-105"
               />
             </div>
-            <div class="flex-1 order-1 lg:order-2">
-              <div class="flex flex-col items-center lg:items-start gap-[15px]">
-                <p class="font-semibold text-primary uppercase">
+            <div class="choose-us-main lg:flex-1 order-1 lg:order-2">
+              <div
+                class="section-head flex flex-col gap-4 text-center lg:text-left items-center lg:items-start"
+              >
+                <p
+                  class="section-subtitle font-semibold uppercase text-primary"
+                >
                   Why Choose Us?
                 </p>
                 <h2
-                  class="max-w-[780px] font-semibold text-[24px] text-dark sm:text-[32px] md:text-[36px] lg:text-[42px]"
+                  class="section-title font-semibold text-3xl md:text-4xl max-w-3xl text-dark"
                 >
                   We bring solutions to make life easier.
                 </h2>
                 <div
-                  class="flex flex-col gap-[25px] sm:gap-[15px] mt-[30px] w-full"
+                  class="choose-us-details mt-[30px] flex flex-col gap-[25px] w-full"
                 >
-                  <div
-                    class="transition-all duration-300 cursor-pointer choose-us-detail active"
-                  >
+                  <div class="choose-us-detail group active cursor-pointer">
                     <h3
-                      class="flex items-center gap-3 py-[10px] border-transparent border-b-2 outline-none font-semibold text-[18px] text-dark sm:text-[16px] transition-all duration-300 choose-us-detail-label"
-                      tabindex="0"
-                      role="button"
-                      aria-expanded="false"
+                      class="choose-us-detail-label text-lg font-semibold text-dark flex items-center gap-3 py-2.5 transition-colors duration-300 group-[.active]:text-primary"
                     >
                       <img
                         src="assets/svg/dropdown.svg"
                         alt="Dropdown Icon"
-                        class="flex-shrink-0 w-fit h-[10px] transition-transform duration-300 choose-us-icon"
+                        class="choose-us-icon w-fit h-2.5 transition-transform duration-300 flex-shrink-0 group-[.active]:rotate-180"
                       />
                       Professional Design
                     </h3>
                     <p
-                      class="max-h-[0] overflow-hidden font-medium text-[17px] text-dark-secondary sm:text-[15px] leading-[28.9px] sm:leading-[26px] choose-us-detail-content"
+                      class="choose-us-detail-content text-[17px] leading-loose font-medium text-dark-secondary max-h-0 opacity-0 overflow-hidden transition-all duration-400 ease-in-out group-[.active]:max-h-[200px] group-[.active]:opacity-100"
                     >
                       Fusce dapibus, tellus ac cursus commodo, tortor mauris
                       condimentum nibh, ut fermentum massa justo sit amet risus.
@@ -672,24 +538,19 @@
                       commodo cursus magna, vel.
                     </p>
                   </div>
-                  <div
-                    class="transition-all duration-300 cursor-pointer choose-us-detail"
-                  >
+                  <div class="choose-us-detail group cursor-pointer">
                     <h3
-                      class="flex items-center gap-3 py-[10px] border-transparent border-b-2 outline-none font-semibold text-[18px] text-dark sm:text-[16px] transition-all duration-300 choose-us-detail-label"
-                      tabindex="0"
-                      role="button"
-                      aria-expanded="false"
+                      class="choose-us-detail-label text-lg font-semibold text-dark flex items-center gap-3 py-2.5 transition-colors duration-300 group-[.active]:text-primary"
                     >
                       <img
                         src="assets/svg/dropdown.svg"
                         alt="Dropdown Icon"
-                        class="flex-shrink-0 w-fit h-[10px] transition-transform duration-300 choose-us-icon"
+                        class="choose-us-icon w-fit h-2.5 transition-transform duration-300 flex-shrink-0 group-[.active]:rotate-180"
                       />
                       Top-Notch Support
                     </h3>
                     <p
-                      class="max-h-[0] overflow-hidden font-medium text-[17px] text-dark-secondary sm:text-[15px] leading-[28.9px] sm:leading-[26px] choose-us-detail-content"
+                      class="choose-us-detail-content text-[17px] leading-loose font-medium text-dark-secondary max-h-0 opacity-0 overflow-hidden transition-all duration-400 ease-in-out group-[.active]:max-h-[200px] group-[.active]:opacity-100"
                     >
                       Fusce dapibus, tellus ac cursus commodo, tortor mauris
                       condimentum nibh, ut fermentum massa justo sit amet risus.
@@ -697,24 +558,19 @@
                       commodo cursus magna, vel.
                     </p>
                   </div>
-                  <div
-                    class="transition-all duration-300 cursor-pointer choose-us-detail"
-                  >
+                  <div class="choose-us-detail group cursor-pointer">
                     <h3
-                      class="flex items-center gap-3 py-[10px] border-transparent border-b-2 outline-none font-semibold text-[18px] text-dark sm:text-[16px] transition-all duration-300 choose-us-detail-label"
-                      tabindex="0"
-                      role="button"
-                      aria-expanded="false"
+                      class="choose-us-detail-label text-lg font-semibold text-dark flex items-center gap-3 py-2.5 transition-colors duration-300 group-[.active]:text-primary"
                     >
                       <img
                         src="assets/svg/dropdown.svg"
                         alt="Dropdown Icon"
-                        class="flex-shrink-0 w-fit h-[10px] transition-transform duration-300 choose-us-icon"
+                        class="choose-us-icon w-fit h-2.5 transition-transform duration-300 flex-shrink-0 group-[.active]:rotate-180"
                       />
                       Header and Slider Options
                     </h3>
                     <p
-                      class="max-h-[0] overflow-hidden font-medium text-[17px] text-dark-secondary sm:text-[15px] leading-[28.9px] sm:leading-[26px] choose-us-detail-content"
+                      class="choose-us-detail-content text-[17px] leading-loose font-medium text-dark-secondary max-h-0 opacity-0 overflow-hidden transition-all duration-400 ease-in-out group-[.active]:max-h-[200px] group-[.active]:opacity-100"
                     >
                       Fusce dapibus, tellus ac cursus commodo, tortor mauris
                       condimentum nibh, ut fermentum massa justo sit amet risus.
@@ -727,506 +583,477 @@
             </div>
           </div>
         </div>
-        <div class="bottom-0 -z-10 absolute w-full max-h-[120px]">
+        <div class="absolute w-full bottom-0 max-h-[120px] -z-10">
           <img
             src="assets/svg/decoration2.svg"
             alt="Decoration image 2"
-            class="block w-full max-w-full h-full object-cover"
+            class="w-full h-full object-cover"
           />
         </div>
       </section>
 
-      <!-- Fact Section -->
-      <section class="py-10 sm:py-16 lg:py-20">
-        <div class="mx-auto px-5 max-w-[1320px]">
-          <div
-            class="flex lg:flex-row flex-col gap-8 sm:gap-12 lg:gap-[150px] lg:text-left text-center"
-          >
+      <section class="fact-section py-16 md:py-20">
+        <div class="max-w-[1320px] mx-auto px-5">
+          <div class="fact-wrapper">
             <div
-              class="flex flex-col items-center lg:items-start gap-[15px] mx-auto lg:mx-0 w-full lg:max-w-[400px]"
+              class="section-main flex flex-col lg:flex-row gap-12 lg:gap-20 xl:gap-[150px]"
             >
-              <p class="font-semibold text-primary uppercase">Company Facts</p>
-              <h2
-                class="max-w-[780px] font-semibold text-[24px] text-dark sm:text-[32px] md:text-[36px] lg:text-[42px]"
+              <div
+                class="section-head flex flex-col gap-4 max-w-full lg:max-w-sm text-center lg:text-left items-center lg:items-start"
               >
-                We are proud of our design team
-              </h2>
-              <p
-                class="font-medium text-[17px] text-dark-secondary sm:text-[16px] leading-[28.9px]"
+                <p
+                  class="section-subtitle font-semibold uppercase text-primary"
+                >
+                  Company Facts
+                </p>
+                <h2
+                  class="section-title font-semibold text-3xl md:text-4xl text-dark"
+                >
+                  We are proud of our design team
+                </h2>
+                <p
+                  class="section-desc font-medium text-[17px] leading-loose text-dark-secondary"
+                >
+                  Just sit back and relax while we take care of your business
+                  needs for you.
+                </p>
+              </div>
+              <div
+                class="fact-cards w-full flex flex-col sm:flex-row gap-10 justify-around"
               >
-                Just sit back and relax while we take care of your business
-                needs for you.
-              </p>
+                <div class="fact-card flex flex-col gap-5 items-center">
+                  <div
+                    class="fact-icon-wrapper w-[60px] h-[60px] bg-light-primary rounded-full grid place-items-center"
+                  >
+                    <img
+                      class="fact-icon w-auto h-[25px]"
+                      src="assets/svg/completedProjects.svg"
+                      alt="Completed Projects"
+                    />
+                  </div>
+                  <div class="fact-number text-[41px] font-semibold text-dark">
+                    1000+
+                  </div>
+                  <div
+                    class="fact-label text-[17px] font-medium text-dark-secondary"
+                  >
+                    Completed Projects
+                  </div>
+                </div>
+                <div class="fact-card flex flex-col gap-5 items-center">
+                  <div
+                    class="fact-icon-wrapper w-[60px] h-[60px] bg-light-primary rounded-full grid place-items-center"
+                  >
+                    <img
+                      class="fact-icon w-auto h-[25px]"
+                      src="assets/svg/happyCustomers.svg"
+                      alt="Happy Customers"
+                    />
+                  </div>
+                  <div class="fact-number text-[41px] font-semibold text-dark">
+                    50K+
+                  </div>
+                  <div
+                    class="fact-label text-[17px] font-medium text-dark-secondary"
+                  >
+                    Happy Customers
+                  </div>
+                </div>
+                <div class="fact-card flex flex-col gap-5 items-center">
+                  <div
+                    class="fact-icon-wrapper w-[60px] h-[60px] bg-light-primary rounded-full grid place-items-center"
+                  >
+                    <img
+                      class="fact-icon w-auto h-[25px]"
+                      src="assets/svg/awardsWon.svg"
+                      alt="Awards Won"
+                    />
+                  </div>
+                  <div class="fact-number text-[41px] font-semibold text-dark">
+                    20+
+                  </div>
+                  <div
+                    class="fact-label text-[17px] font-medium text-dark-secondary"
+                  >
+                    Awards Won
+                  </div>
+                </div>
+              </div>
             </div>
             <div
-              class="flex lg:flex-row flex-col justify-around items-center gap-10 lg:gap-[50px] w-full"
+              class="team-info-cards pt-16 flex flex-wrap justify-center gap-[30px]"
             >
-              <div class="flex flex-col items-center gap-5">
+              <div
+                class="team-info-card group p-10 flex flex-col items-center sm:items-start text-center sm:text-left gap-2.5 max-w-full sm:max-w-[300px] shadow-custom rounded-lg bg-white transition-shadow duration-300 ease-in-out hover:shadow-custom-hover"
+              >
                 <div
-                  class="place-items-center grid bg-light-primary rounded-full w-[60px] h-[60px]"
+                  class="max-w-[100px] aspect-square rounded-full overflow-hidden"
                 >
                   <img
-                    class="w-auto h-[25px]"
-                    src="assets/svg/completedProjects.svg"
-                    alt="Completed Projects"
+                    src="assets/images/person1.jpg"
+                    alt="Person 1"
+                    class="w-full h-full object-cover"
                   />
                 </div>
-                <div class="font-semibold text-[41px] text-dark">1000+</div>
-                <div class="font-medium text-[17px] text-dark-secondary">
-                  Completed Projects
+                <div
+                  class="team-info-card-name font-semibold text-xl text-dark"
+                >
+                  Coriss Ambody
+                </div>
+                <div
+                  class="team-info-card-position font-semibold text-sm text-light-secondary"
+                >
+                  Financial Analyst
+                </div>
+                <div
+                  class="team-info-card-desc font-medium text-[17px] leading-loose text-dark-secondary"
+                >
+                  Fermentum massa justo sit amet risus morbi leo.
+                </div>
+                <div
+                  class="team-info-card-socials flex items-center gap-4 mt-2"
+                >
+                  <a href="#"
+                    ><img src="assets/svg/twitter.svg" alt="Twitter Icon"
+                  /></a>
+                  <a href="#"
+                    ><img src="assets/svg/facebook.svg" alt="Facebook Icon"
+                  /></a>
+                  <a href="#"
+                    ><img src="assets/svg/dribbble.svg" alt="Dribbble Icon"
+                  /></a>
                 </div>
               </div>
-              <div class="flex flex-col items-center gap-5">
+              <div
+                class="team-info-card group p-10 flex flex-col items-center sm:items-start text-center sm:text-left gap-2.5 max-w-full sm:max-w-[300px] shadow-custom rounded-lg bg-white transition-shadow duration-300 ease-in-out hover:shadow-custom-hover"
+              >
                 <div
-                  class="place-items-center grid bg-light-primary rounded-full w-[60px] h-[60px]"
+                  class="max-w-[100px] aspect-square rounded-full overflow-hidden"
                 >
                   <img
-                    class="w-auto h-[25px]"
-                    src="assets/svg/happyCustomers.svg"
-                    alt="Happy Customers"
+                    src="assets/images/person2.jpg"
+                    alt="Person 2"
+                    class="w-full h-full object-cover"
                   />
                 </div>
-                <div class="font-semibold text-[41px] text-dark">50K+</div>
-                <div class="font-medium text-[17px] text-dark-secondary">
-                  Happy Customers
+                <div
+                  class="team-info-card-name font-semibold text-xl text-dark"
+                >
+                  Cory Zamora
+                </div>
+                <div
+                  class="team-info-card-position font-semibold text-sm text-light-secondary"
+                >
+                  Marketing Specialist
+                </div>
+                <div
+                  class="team-info-card-desc font-medium text-[17px] leading-loose text-dark-secondary"
+                >
+                  Fermentum massa justo sit amet risus morbi leo.
+                </div>
+                <div
+                  class="team-info-card-socials flex items-center gap-4 mt-2"
+                >
+                  <a href="#"
+                    ><img src="assets/svg/twitter.svg" alt="Twitter Icon"
+                  /></a>
+                  <a href="#"
+                    ><img src="assets/svg/facebook.svg" alt="Facebook Icon"
+                  /></a>
+                  <a href="#"
+                    ><img src="assets/svg/dribbble.svg" alt="Dribbble Icon"
+                  /></a>
                 </div>
               </div>
-              <div class="flex flex-col items-center gap-5">
+              <div
+                class="team-info-card group p-10 flex flex-col items-center sm:items-start text-center sm:text-left gap-2.5 max-w-full sm:max-w-[300px] shadow-custom rounded-lg bg-white transition-shadow duration-300 ease-in-out hover:shadow-custom-hover"
+              >
                 <div
-                  class="place-items-center grid bg-light-primary rounded-full w-[60px] h-[60px]"
+                  class="max-w-[100px] aspect-square rounded-full overflow-hidden"
                 >
                   <img
-                    class="w-auto h-[25px]"
-                    src="assets/svg/awardsWon.svg"
-                    alt="Awards Won"
+                    src="assets/images/person3.jpg"
+                    alt="Person 3"
+                    class="w-full h-full object-cover"
                   />
                 </div>
-                <div class="font-semibold text-[41px] text-dark">20+</div>
-                <div class="font-medium text-[17px] text-dark-secondary">
-                  Awards Won
+                <div
+                  class="team-info-card-name font-semibold text-xl text-dark"
+                >
+                  Nikolas Brooten
+                </div>
+                <div
+                  class="team-info-card-position font-semibold text-sm text-light-secondary"
+                >
+                  Sales Manager
+                </div>
+                <div
+                  class="team-info-card-desc font-medium text-[17px] leading-loose text-dark-secondary"
+                >
+                  Fermentum massa justo sit amet risus morbi leo.
+                </div>
+                <div
+                  class="team-info-card-socials flex items-center gap-4 mt-2"
+                >
+                  <a href="#"
+                    ><img src="assets/svg/twitter.svg" alt="Twitter Icon"
+                  /></a>
+                  <a href="#"
+                    ><img src="assets/svg/facebook.svg" alt="Facebook Icon"
+                  /></a>
+                  <a href="#"
+                    ><img src="assets/svg/dribbble.svg" alt="Dribbble Icon"
+                  /></a>
                 </div>
               </div>
-            </div>
-          </div>
-          <div
-            class="flex md:flex-row flex-col justify-center items-center gap-6 sm:gap-8 lg:gap-[30px] pt-10 sm:pt-12 lg:pt-[60px]"
-          >
-            <div
-              class="flex flex-col items-center lg:items-start gap-[10px] bg-white p-5 sm:p-[30px] rounded-lg w-full lg:max-w-[300px] lg:text-left text-center card"
-            >
               <div
-                class="rounded-full max-w-[100px] aspect-square overflow-hidden"
+                class="team-info-card group p-10 flex flex-col items-center sm:items-start text-center sm:text-left gap-2.5 max-w-full sm:max-w-[300px] shadow-custom rounded-lg bg-white transition-shadow duration-300 ease-in-out hover:shadow-custom-hover"
               >
-                <img
-                  src="assets/images/person1.jpg"
-                  alt="Person 1"
-                  class="block w-full max-w-full h-full object-cover"
-                />
-              </div>
-              <div class="font-semibold text-[20px] text-dark">
-                Coriss Ambody
-              </div>
-              <div class="font-semibold text-[14px] text-light-secondary">
-                Financial Analyst
-              </div>
-              <div
-                class="font-medium text-[17px] text-dark-secondary leading-[28.9px]"
-              >
-                Fermentum massa justo sit amet risus morbi leo.
-              </div>
-              <div class="flex items-center gap-[15px]">
-                <a href="#">
+                <div
+                  class="max-w-[100px] aspect-square rounded-full overflow-hidden"
+                >
                   <img
-                    src="assets/svg/twitter.svg"
-                    alt="Twitter Icon"
-                    class="block w-full max-w-full h-full object-cover"
+                    src="assets/images/person4.jpg"
+                    alt="Person 4"
+                    class="w-full h-full object-cover"
                   />
-                </a>
-                <a href="#">
-                  <img
-                    src="assets/svg/facebook.svg"
-                    alt="Facebook Icon"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
-                </a>
-                <a href="#">
-                  <img
-                    src="assets/svg/dribbble.svg"
-                    alt="Dribbble Icon"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
-                </a>
-              </div>
-            </div>
-            <div
-              class="flex flex-col items-center lg:items-start gap-[10px] bg-white p-5 sm:p-[30px] rounded-lg w-full lg:max-w-[300px] lg:text-left text-center card"
-            >
-              <div
-                class="rounded-full max-w-[100px] aspect-square overflow-hidden"
-              >
-                <img
-                  src="assets/images/person2.jpg"
-                  alt="Person 2"
-                  class="block w-full max-w-full h-full object-cover"
-                />
-              </div>
-              <div class="font-semibold text-[20px] text-dark">Cory Zamora</div>
-              <div class="font-semibold text-[14px] text-light-secondary">
-                Marketing Specialist
-              </div>
-              <div
-                class="font-medium text-[17px] text-dark-secondary leading-[28.9px]"
-              >
-                Fermentum massa justo sit amet risus morbi leo.
-              </div>
-              <div class="flex items-center gap-[15px]">
-                <a href="#">
-                  <img
-                    src="assets/svg/twitter.svg"
-                    alt="Twitter Icon"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
-                </a>
-                <a href="#">
-                  <img
-                    src="assets/svg/facebook.svg"
-                    alt="Facebook Icon"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
-                </a>
-                <a href="#">
-                  <img
-                    src="assets/svg/dribbble.svg"
-                    alt="Dribbble Icon"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
-                </a>
-              </div>
-            </div>
-            <div
-              class="flex flex-col items-center lg:items-start gap-[10px] bg-white p-5 sm:p-[30px] rounded-lg w-full lg:max-w-[300px] lg:text-left text-center card"
-            >
-              <div
-                class="rounded-full max-w-[100px] aspect-square overflow-hidden"
-              >
-                <img
-                  src="assets/images/person3.jpg"
-                  alt="Person 3"
-                  class="block w-full max-w-full h-full object-cover"
-                />
-              </div>
-              <div class="font-semibold text-[20px] text-dark">
-                Nikolas Brooten
-              </div>
-              <div class="font-semibold text-[14px] text-light-secondary">
-                Sales Manager
-              </div>
-              <div
-                class="font-medium text-[17px] text-dark-secondary leading-[28.9px]"
-              >
-                Fermentum massa justo sit amet risus morbi leo.
-              </div>
-              <div class="flex items-center gap-[15px]">
-                <a href="#">
-                  <img
-                    src="assets/svg/twitter.svg"
-                    alt="Twitter Icon"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
-                </a>
-                <a href="#">
-                  <img
-                    src="assets/svg/facebook.svg"
-                    alt="Facebook Icon"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
-                </a>
-                <a href="#">
-                  <img
-                    src="assets/svg/dribbble.svg"
-                    alt="Dribbble Icon"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
-                </a>
-              </div>
-            </div>
-            <div
-              class="flex flex-col items-center lg:items-start gap-[10px] bg-white p-5 sm:p-[30px] rounded-lg w-full lg:max-w-[300px] lg:text-left text-center card"
-            >
-              <div
-                class="rounded-full max-w-[100px] aspect-square overflow-hidden"
-              >
-                <img
-                  src="assets/images/person4.jpg"
-                  alt="Person 4"
-                  class="block w-full max-w-full h-full object-cover"
-                />
-              </div>
-              <div class="font-semibold text-[20px] text-dark">
-                Jackie Sanders
-              </div>
-              <div class="font-semibold text-[14px] text-light-secondary">
-                Investment Planner
-              </div>
-              <div
-                class="font-medium text-[17px] text-dark-secondary leading-[28.9px]"
-              >
-                Fermentum massa justo sit amet risus morbi leo.
-              </div>
-              <div class="flex items-center gap-[15px]">
-                <a href="#">
-                  <img
-                    src="assets/svg/twitter.svg"
-                    alt="Twitter Icon"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
-                </a>
-                <a href="#">
-                  <img
-                    src="assets/svg/facebook.svg"
-                    alt="Facebook Icon"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
-                </a>
-                <a href="#">
-                  <img
-                    src="assets/svg/dribbble.svg"
-                    alt="Dribbble Icon"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
-                </a>
+                </div>
+                <div
+                  class="team-info-card-name font-semibold text-xl text-dark"
+                >
+                  Jackie Sanders
+                </div>
+                <div
+                  class="team-info-card-position font-semibold text-sm text-light-secondary"
+                >
+                  Investment Planner
+                </div>
+                <div
+                  class="team-info-card-desc font-medium text-[17px] leading-loose text-dark-secondary"
+                >
+                  Fermentum massa justo sit amet risus morbi leo.
+                </div>
+                <div
+                  class="team-info-card-socials flex items-center gap-4 mt-2"
+                >
+                  <a href="#"
+                    ><img src="assets/svg/twitter.svg" alt="Twitter Icon"
+                  /></a>
+                  <a href="#"
+                    ><img src="assets/svg/facebook.svg" alt="Facebook Icon"
+                  /></a>
+                  <a href="#"
+                    ><img src="assets/svg/dribbble.svg" alt="Dribbble Icon"
+                  /></a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Projects Section -->
-      <section class="relative py-10 sm:py-16 lg:py-20 overflow-hidden">
-        <div class="mx-auto px-5 max-w-[1320px]">
-          <div class="mb-20">
-            <div class="flex flex-col items-center gap-[15px]">
-              <p class="font-semibold text-primary uppercase">
+      <section class="projects-section relative overflow-hidden py-16 md:py-20">
+        <div class="max-w-[1320px] mx-auto px-5">
+          <div class="projects-wrapper mb-16 md:mb-20">
+            <div
+              class="section-head flex flex-col gap-4 items-center text-center"
+            >
+              <p class="section-subtitle font-semibold uppercase text-primary">
                 Latest Projects
               </p>
               <h2
-                class="max-w-[780px] font-semibold text-[24px] text-dark sm:text-[32px] md:text-[36px] lg:text-[42px] text-center"
+                class="section-title font-semibold text-3xl md:text-4xl max-w-3xl text-dark"
               >
                 Check out some of our awesome projects with creative ideas and
                 great design.
               </h2>
             </div>
-            <div class="flex flex-col gap-10 mt-[50px]">
+            <div class="section-body mt-12 flex flex-col gap-10">
               <div
-                class="relative flex gap-[30px] -ml-[50px] sm:-ml-5 lg:-ml-[50px] p-5 lg:px-[50px] w-[calc(100%+100px)] sm:w-[calc(100%+40px)] lg:w-[calc(100%+100px)] overflow-visible transition-all duration-300 project-carousel"
+                class="project-carousel flex gap-[30px] transition-transform duration-400 ease-in-out py-5"
               >
                 <div
-                  class="flex flex-col flex-[0_0_49%] sm:flex-[0_0_100%] md:flex-[0_0_48%] lg:flex-[0_0_49%] gap-[15px] transition-[flex-basis] duration-200"
+                  class="project-carousel-item group flex-shrink-0 basis-full sm:basis-[48%] lg:basis-[49%] flex flex-col gap-4"
                 >
-                  <div class="rounded-lg aspect-[1.53] overflow-hidden">
+                  <div
+                    class="project-carousel-item-image-wrapper aspect-[1.53] rounded-lg overflow-hidden"
+                  >
                     <img
                       src="assets/images/crasFermentumSem.jpg"
                       alt="Cras Fermentum Sem"
-                      class="block w-full max-w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      class="project-carousel-item-image w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                     />
                   </div>
-                  <div class="flex flex-col gap-[10px]">
-                    <h3 class="font-semibold text-[23px] text-dark">
+                  <div
+                    class="project-carousel-item-content flex flex-col gap-2.5"
+                  >
+                    <h3
+                      class="project-carousel-item-title font-semibold text-2xl text-dark"
+                    >
                       Cras Fermentum Sem
                     </h3>
                     <p
-                      class="font-semibold text-[14px] text-dark-tertiary uppercase"
+                      class="project-carousel-item-type font-semibold text-sm uppercase text-dark-tertiary"
                     >
                       Mobile Design
                     </p>
                   </div>
                 </div>
                 <div
-                  class="flex flex-col flex-[0_0_49%] sm:flex-[0_0_100%] md:flex-[0_0_48%] lg:flex-[0_0_49%] gap-[15px] transition-[flex-basis] duration-200"
+                  class="project-carousel-item group flex-shrink-0 basis-full sm:basis-[48%] lg:basis-[49%] flex flex-col gap-4"
                 >
-                  <div class="rounded-lg aspect-[1.53] overflow-hidden">
+                  <div
+                    class="project-carousel-item-image-wrapper aspect-[1.53] rounded-lg overflow-hidden"
+                  >
                     <img
                       src="assets/images/venenatisEuismodVehicula.jpg"
                       alt="Venenatis Euismod Vehicula"
-                      class="block w-full max-w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      class="project-carousel-item-image w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                     />
                   </div>
-                  <div class="flex flex-col gap-[10px]">
-                    <h3 class="font-semibold text-[23px] text-dark">
+                  <div
+                    class="project-carousel-item-content flex flex-col gap-2.5"
+                  >
+                    <h3
+                      class="project-carousel-item-title font-semibold text-2xl text-dark"
+                    >
                       Venenatis Euismod Vehicula
                     </h3>
                     <p
-                      class="font-semibold text-[14px] text-dark-tertiary uppercase"
+                      class="project-carousel-item-type font-semibold text-sm uppercase text-dark-tertiary"
                     >
                       Web Design
                     </p>
                   </div>
                 </div>
                 <div
-                  class="flex flex-col flex-[0_0_49%] sm:flex-[0_0_100%] md:flex-[0_0_48%] lg:flex-[0_0_49%] gap-[15px] transition-[flex-basis] duration-200"
+                  class="project-carousel-item group flex-shrink-0 basis-full sm:basis-[48%] lg:basis-[49%] flex flex-col gap-4"
                 >
-                  <div class="rounded-lg aspect-[1.53] overflow-hidden">
+                  <div
+                    class="project-carousel-item-image-wrapper aspect-[1.53] rounded-lg overflow-hidden"
+                  >
                     <img
                       src="assets/images/tortorTellusCursus.jpg"
                       alt="Tortor Tellus Cursus"
-                      class="block w-full max-w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      class="project-carousel-item-image w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                     />
                   </div>
-                  <div class="flex flex-col gap-[10px]">
-                    <h3 class="font-semibold text-[23px] text-dark">
+                  <div
+                    class="project-carousel-item-content flex flex-col gap-2.5"
+                  >
+                    <h3
+                      class="project-carousel-item-title font-semibold text-2xl text-dark"
+                    >
                       Tortor Tellus Cursus
                     </h3>
                     <p
-                      class="font-semibold text-[14px] text-dark-tertiary uppercase"
+                      class="project-carousel-item-type font-semibold text-sm uppercase text-dark-tertiary"
                     >
                       Stationary
                     </p>
                   </div>
                 </div>
                 <div
-                  class="flex flex-col flex-[0_0_49%] sm:flex-[0_0_100%] md:flex-[0_0_48%] lg:flex-[0_0_49%] gap-[15px] transition-[flex-basis] duration-200"
+                  class="project-carousel-item group flex-shrink-0 basis-full sm:basis-[48%] lg:basis-[49%] flex flex-col gap-4"
                 >
-                  <div class="rounded-lg aspect-[1.53] overflow-hidden">
+                  <div
+                    class="project-carousel-item-image-wrapper aspect-[1.53] rounded-lg overflow-hidden"
+                  >
                     <img
                       src="assets/images/crasFermentumSem.jpg"
                       alt="Cras Fermentum Sem"
-                      class="block w-full max-w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      class="project-carousel-item-image w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                     />
                   </div>
-                  <div class="flex flex-col gap-[10px]">
-                    <h3 class="font-semibold text-[23px] text-dark">
+                  <div
+                    class="project-carousel-item-content flex flex-col gap-2.5"
+                  >
+                    <h3
+                      class="project-carousel-item-title font-semibold text-2xl text-dark"
+                    >
                       Cras Fermentum Sem
                     </h3>
                     <p
-                      class="font-semibold text-[14px] text-dark-tertiary uppercase"
+                      class="project-carousel-item-type font-semibold text-sm uppercase text-dark-tertiary"
                     >
                       Mobile Design
                     </p>
                   </div>
                 </div>
                 <div
-                  class="flex flex-col flex-[0_0_49%] sm:flex-[0_0_100%] md:flex-[0_0_48%] lg:flex-[0_0_49%] gap-[15px] transition-[flex-basis] duration-200"
+                  class="project-carousel-item group flex-shrink-0 basis-full sm:basis-[48%] lg:basis-[49%] flex flex-col gap-4"
                 >
-                  <div class="rounded-lg aspect-[1.53] overflow-hidden">
+                  <div
+                    class="project-carousel-item-image-wrapper aspect-[1.53] rounded-lg overflow-hidden"
+                  >
                     <img
                       src="assets/images/venenatisEuismodVehicula.jpg"
                       alt="Venenatis Euismod Vehicula"
-                      class="block w-full max-w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      class="project-carousel-item-image w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                     />
                   </div>
-                  <div class="flex flex-col gap-[10px]">
-                    <h3 class="font-semibold text-[23px] text-dark">
+                  <div
+                    class="project-carousel-item-content flex flex-col gap-2.5"
+                  >
+                    <h3
+                      class="project-carousel-item-title font-semibold text-2xl text-dark"
+                    >
                       Venenatis Euismod Vehicula
                     </h3>
                     <p
-                      class="font-semibold text-[14px] text-dark-tertiary uppercase"
+                      class="project-carousel-item-type font-semibold text-sm uppercase text-dark-tertiary"
                     >
                       Web Design
                     </p>
                   </div>
                 </div>
                 <div
-                  class="flex flex-col flex-[0_0_49%] sm:flex-[0_0_100%] md:flex-[0_0_48%] lg:flex-[0_0_49%] gap-[15px] transition-[flex-basis] duration-200"
+                  class="project-carousel-item group flex-shrink-0 basis-full sm:basis-[48%] lg:basis-[49%] flex flex-col gap-4"
                 >
-                  <div class="rounded-lg aspect-[1.53] overflow-hidden">
+                  <div
+                    class="project-carousel-item-image-wrapper aspect-[1.53] rounded-lg overflow-hidden"
+                  >
                     <img
                       src="assets/images/tortorTellusCursus.jpg"
                       alt="Tortor Tellus Cursus"
-                      class="block w-full max-w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      class="project-carousel-item-image w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                     />
                   </div>
-                  <div class="flex flex-col gap-[10px]">
-                    <h3 class="font-semibold text-[23px] text-dark">
+                  <div
+                    class="project-carousel-item-content flex flex-col gap-2.5"
+                  >
+                    <h3
+                      class="project-carousel-item-title font-semibold text-2xl text-dark"
+                    >
                       Tortor Tellus Cursus
                     </h3>
                     <p
-                      class="font-semibold text-[14px] text-dark-tertiary uppercase"
-                    >
-                      Stationary
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="flex flex-col flex-[0_0_49%] sm:flex-[0_0_100%] md:flex-[0_0_48%] lg:flex-[0_0_49%] gap-[15px] transition-[flex-basis] duration-200"
-                >
-                  <div class="rounded-lg aspect-[1.53] overflow-hidden">
-                    <img
-                      src="assets/images/crasFermentumSem.jpg"
-                      alt="Cras Fermentum Sem"
-                      class="block w-full max-w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div class="flex flex-col gap-[10px]">
-                    <h3 class="font-semibold text-[23px] text-dark">
-                      Cras Fermentum Sem
-                    </h3>
-                    <p
-                      class="font-semibold text-[14px] text-dark-tertiary uppercase"
-                    >
-                      Mobile Design
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="flex flex-col flex-[0_0_49%] sm:flex-[0_0_100%] md:flex-[0_0_48%] lg:flex-[0_0_49%] gap-[15px] transition-[flex-basis] duration-200"
-                >
-                  <div class="rounded-lg aspect-[1.53] overflow-hidden">
-                    <img
-                      src="assets/images/venenatisEuismodVehicula.jpg"
-                      alt="Venenatis Euismod Vehicula"
-                      class="block w-full max-w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div class="flex flex-col gap-[10px]">
-                    <h3 class="font-semibold text-[23px] text-dark">
-                      Venenatis Euismod Vehicula
-                    </h3>
-                    <p
-                      class="font-semibold text-[14px] text-dark-tertiary uppercase"
-                    >
-                      Web Design
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="flex flex-col flex-[0_0_49%] sm:flex-[0_0_100%] md:flex-[0_0_48%] lg:flex-[0_0_49%] gap-[15px] transition-[flex-basis] duration-200"
-                >
-                  <div class="rounded-lg aspect-[1.53] overflow-hidden">
-                    <img
-                      src="assets/images/tortorTellusCursus.jpg"
-                      alt="Tortor Tellus Cursus"
-                      class="block w-full max-w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div class="flex flex-col gap-[10px]">
-                    <h3 class="font-semibold text-[23px] text-dark">
-                      Tortor Tellus Cursus
-                    </h3>
-                    <p
-                      class="font-semibold text-[14px] text-dark-tertiary uppercase"
+                      class="project-carousel-item-type font-semibold text-sm uppercase text-dark-tertiary"
                     >
                       Stationary
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="flex justify-center gap-[10px]">
+              <div
+                class="project-carousel-indicators flex justify-center gap-2.5"
+              >
                 <button
                   id="carouselLeftIndicator"
-                  class="place-items-center grid bg-primary hover:shadow-button p-0 rounded-full w-11 h-11 text-light transition-all duration-300"
+                  class="button--primary grid place-items-center w-11 h-11 border border-transparent cursor-pointer rounded-full transition-shadow duration-300 ease-in-out bg-primary text-light hover:shadow-primary"
                 >
                   <img
-                    class="p-0 w-fit h-[15px]"
+                    class="project-carousel-indicator h-[15px] w-auto"
                     src="assets/svg/arrowLeft.svg"
                     alt="Left Arrow"
                   />
                 </button>
                 <button
                   id="carouselRightIndicator"
-                  class="place-items-center grid bg-primary hover:shadow-button p-0 rounded-full w-11 h-11 text-light transition-all duration-300"
+                  class="button--primary grid place-items-center w-11 h-11 border border-transparent cursor-pointer rounded-full transition-shadow duration-300 ease-in-out bg-primary text-light hover:shadow-primary"
                 >
                   <img
-                    class="p-0 w-fit h-[15px]"
+                    class="project-carousel-indicator h-[15px] w-auto"
                     src="assets/svg/arrowRight.svg"
                     alt="Right Arrow"
                   />
@@ -1235,251 +1062,258 @@
             </div>
           </div>
         </div>
-        <div class="bottom-0 -z-10 absolute w-full max-h-[120px]">
+        <div class="absolute w-full bottom-0 max-h-[120px] -z-10">
           <img
             src="assets/svg/decoration1.svg"
             alt="Decoration image 3"
-            class="block w-full max-w-full h-full object-cover"
+            class="w-full h-full object-cover"
           />
         </div>
       </section>
 
-      <!-- Testimonials Section -->
       <section
-        class="bg-linear-to-b from-primary-gradient to-secondary-gradient py-10 sm:py-16 lg:py-20"
+        class="testimonials-section py-16 md:py-20 bg-[linear-gradient(to_bottom,theme(colors.primary-gradient),theme(colors.secondary-gradient))]"
       >
-        <div class="mx-auto px-5 max-w-[1320px]">
-          <div class="flex flex-col items-center gap-[15px]">
-            <p class="font-semibold text-primary uppercase">Happy Customers</p>
-            <h2
-              class="max-w-[780px] font-semibold text-[24px] text-dark sm:text-[32px] md:text-[36px] lg:text-[42px] text-center"
-            >
-              Don't take our word for it. See what customers are saying about
-              us.
-            </h2>
-          </div>
-          <div
-            class="gap-5 sm:gap-[30px] columns-1 md:columns-2 lg:columns-3 mt-8 sm:mt-10 lg:mt-[50px]"
-          >
+        <div class="max-w-[1320px] mx-auto px-5">
+          <div class="testimonials-wrapper">
             <div
-              class="flex flex-col gap-[25px] bg-white mb-[30px] p-5 sm:p-[30px] rounded-lg break-inside-avoid card"
+              class="section-head flex flex-col gap-4 items-center text-center"
             >
-              <div class="flex items-center text-golden">
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-              </div>
-              <div
-                class="font-medium text-[18px] text-dark-secondary sm:text-[16px] leading-[30.6px] sm:leading-[26px]"
+              <p class="section-subtitle font-semibold uppercase text-primary">
+                Happy Customers
+              </p>
+              <h2
+                class="section-title font-semibold text-3xl md:text-4xl max-w-3xl text-dark"
               >
-                "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-                auctor. Vestibulum id ligula porta felis euismod semper. Cras
-                justo odio dapibus facilisis sociis natoque penatibus."
-              </div>
-              <div class="flex items-center gap-5">
-                <div
-                  class="rounded-full max-w-[70px] aspect-square overflow-hidden"
-                >
-                  <img
-                    src="assets/images/person1.jpg"
-                    alt="Person 1"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
-                </div>
-                <div class="flex flex-col gap-[10px]">
-                  <div class="font-semibold text-[19px] text-dark">
-                    Coriss Ambody
-                  </div>
-                  <div class="font-medium text-[17px] text-light-secondary">
-                    Financial Analyst
-                  </div>
-                </div>
-              </div>
+                Don't take our word for it. See what customers are saying about
+                us.
+              </h2>
             </div>
             <div
-              class="flex flex-col gap-[25px] bg-white mb-[30px] p-10 xxs:p-5 sm:p-[30px] rounded-lg break-inside-avoid card"
+              class="section-body mt-12 columns-1 md:columns-2 xl:columns-3 gap-[30px]"
             >
-              <div class="flex items-center text-golden">
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
+              <div
+                class="testimonial-card mb-[30px] p-10 flex flex-col gap-6 shadow-custom rounded-lg bg-white transition-shadow duration-300 ease-in-out hover:shadow-custom-hover break-inside-avoid-column"
+              >
+                <div class="testimonial-card-star-wrapper flex text-golden">
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                </div>
+                <blockquote
+                  class="testimonial-card-quote font-medium text-lg leading-relaxed text-dark-secondary"
+                >
+                  “Vivamus sagittis lacus vel augue laoreet rutrum faucibus
+                  dolor auctor. Vestibulum id ligula porta felis euismod semper.
+                  Cras justo odio dapibus facilisis sociis natoque penatibus.”
+                </blockquote>
+                <div class="testimonial-card-author flex items-center gap-5">
+                  <div
+                    class="w-[70px] aspect-square rounded-full overflow-hidden"
+                  >
+                    <img
+                      src="assets/images/person1.jpg"
+                      alt="Person 1"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    <div class="font-semibold text-lg text-dark">
+                      Coriss Ambody
+                    </div>
+                    <div class="font-medium text-[17px] text-light-secondary">
+                      Financial Analyst
+                    </div>
+                  </div>
+                </div>
               </div>
               <div
-                class="font-medium text-[18px] text-dark-secondary sm:text-[16px] leading-[30.6px] sm:leading-[26px]"
+                class="testimonial-card mb-[30px] p-10 flex flex-col gap-6 shadow-custom rounded-lg bg-white transition-shadow duration-300 ease-in-out hover:shadow-custom-hover break-inside-avoid-column"
               >
-                "Etiam adipiscing tincidunt elit convallis felis suscipit ut.
-                Phasellus rhoncus tincidunt auctor. Nullam eu sagittis mauris.
-                Donec non dolor ac elit aliquam tincidunt at at sapien. Aenean
-                tortor libero condimentum ac laoreet vitae."
-              </div>
-              <div class="flex items-center gap-5">
-                <div
-                  class="rounded-full max-w-[70px] aspect-square overflow-hidden"
+                <div class="testimonial-card-star-wrapper flex text-golden">
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                </div>
+                <blockquote
+                  class="testimonial-card-quote font-medium text-lg leading-relaxed text-dark-secondary"
                 >
-                  <img
-                    src="assets/images/person4.jpg"
-                    alt="Person 4"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
-                </div>
-                <div class="flex flex-col gap-[10px]">
-                  <div class="font-semibold text-[19px] text-dark">
-                    Coriss Ambady
+                  “Etiam adipiscing tincidunt elit convallis felis suscipit ut.
+                  Phasellus rhoncus tincidunt auctor. Nullam eu sagittis mauris.
+                  Donec non dolor ac elit aliquam tincidunt at at sapien. Aenean
+                  tortor libero condimentum ac laoreet vitae.”
+                </blockquote>
+                <div class="testimonial-card-author flex items-center gap-5">
+                  <div
+                    class="w-[70px] aspect-square rounded-full overflow-hidden"
+                  >
+                    <img
+                      src="assets/images/person4.jpg"
+                      alt="Person 4"
+                      class="w-full h-full object-cover"
+                    />
                   </div>
-                  <div class="font-medium text-[17px] text-light-secondary">
-                    Financial Analyst
+                  <div class="flex flex-col gap-2">
+                    <div class="font-semibold text-lg text-dark">
+                      Coriss Ambady
+                    </div>
+                    <div class="font-medium text-[17px] text-light-secondary">
+                      Financial Analyst
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div
-              class="flex flex-col gap-[25px] bg-white mb-[30px] p-5 sm:p-[30px] rounded-lg break-inside-avoid card"
-            >
-              <div class="flex items-center text-golden">
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
               </div>
               <div
-                class="font-medium text-[18px] text-dark-secondary sm:text-[16px] leading-[30.6px] sm:leading-[26px]"
+                class="testimonial-card mb-[30px] p-10 flex flex-col gap-6 shadow-custom rounded-lg bg-white transition-shadow duration-300 ease-in-out hover:shadow-custom-hover break-inside-avoid-column"
               >
-                "Fusce dapibus, tellus ac cursus tortor mauris condimentum
-                fermentum massa justo sit amet. Vivamus sagittis lacus vel augue
-                laoreet rutrum faucibus dolor auctor. Cras mattis consectetur
-                purus sit amet fermentum. Aenean lacinia bibendum nulla sed."
-              </div>
-              <div class="flex items-center gap-5">
-                <div
-                  class="rounded-full max-w-[70px] aspect-square overflow-hidden"
+                <div class="testimonial-card-star-wrapper flex text-golden">
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                </div>
+                <blockquote
+                  class="testimonial-card-quote font-medium text-lg leading-relaxed text-dark-secondary"
                 >
-                  <img
-                    src="assets/images/person2.jpg"
-                    alt="Person 2"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
-                </div>
-                <div class="flex flex-col gap-[10px]">
-                  <div class="font-semibold text-[19px] text-dark">
-                    Cory Zamora
+                  “Fusce dapibus, tellus ac cursus tortor mauris condimentum
+                  fermentum massa justo sit amet. Vivamus sagittis lacus vel
+                  augue laoreet rutrum faucibus dolor auctor. Cras mattis
+                  consectetur purus sit amet fermentum. Aenean lacinia bibendum
+                  nulla sed.”
+                </blockquote>
+                <div class="testimonial-card-author flex items-center gap-5">
+                  <div
+                    class="w-[70px] aspect-square rounded-full overflow-hidden"
+                  >
+                    <img
+                      src="assets/images/person2.jpg"
+                      alt="Person 2"
+                      class="w-full h-full object-cover"
+                    />
                   </div>
-                  <div class="font-medium text-[17px] text-light-secondary">
-                    Marketing Specialist
+                  <div class="flex flex-col gap-2">
+                    <div class="font-semibold text-lg text-dark">
+                      Cory Zamora
+                    </div>
+                    <div class="font-medium text-[17px] text-light-secondary">
+                      Marketing Specialist
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div
-              class="flex flex-col gap-[25px] bg-white mb-[30px] p-5 sm:p-[30px] rounded-lg break-inside-avoid card"
-            >
-              <div class="flex items-center text-golden">
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
               </div>
               <div
-                class="font-medium text-[18px] text-dark-secondary sm:text-[16px] leading-[30.6px] sm:leading-[26px]"
+                class="testimonial-card mb-[30px] p-10 flex flex-col gap-6 shadow-custom rounded-lg bg-white transition-shadow duration-300 ease-in-out hover:shadow-custom-hover break-inside-avoid-column"
               >
-                "Donec id elit non mi porta gravida at eget metus. Nulla vitae
-                elit libero, a pharetra augue. Cum sociis natoque penatibus et
-                magnis dis parturient montes, nascetur ridiculus mus."
-              </div>
-              <div class="flex items-center gap-5">
-                <div
-                  class="rounded-full max-w-[70px] aspect-square overflow-hidden"
+                <div class="testimonial-card-star-wrapper flex text-golden">
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                </div>
+                <blockquote
+                  class="testimonial-card-quote font-medium text-lg leading-relaxed text-dark-secondary"
                 >
-                  <img
-                    src="assets/images/person5.jpg"
-                    alt="Person 5"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
-                </div>
-                <div class="flex flex-col gap-[10px]">
-                  <div class="font-semibold text-[19px] text-dark">
-                    Laura Widerski
+                  “Donec id elit non mi porta gravida at eget metus. Nulla vitae
+                  elit libero, a pharetra augue. Cum sociis natoque penatibus et
+                  magnis dis parturient montes, nascetur ridiculus mus.”
+                </blockquote>
+                <div class="testimonial-card-author flex items-center gap-5">
+                  <div
+                    class="w-[70px] aspect-square rounded-full overflow-hidden"
+                  >
+                    <img
+                      src="assets/images/person5.jpg"
+                      alt="Person 5"
+                      class="w-full h-full object-cover"
+                    />
                   </div>
-                  <div class="font-medium text-[17px] text-light-secondary">
-                    Sales Specialist
+                  <div class="flex flex-col gap-2">
+                    <div class="font-semibold text-lg text-dark">
+                      Laura Widerski
+                    </div>
+                    <div class="font-medium text-[17px] text-light-secondary">
+                      Sales Specialist
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div
-              class="flex flex-col gap-[25px] bg-white mb-[30px] p-5 sm:p-[30px] rounded-lg break-inside-avoid card"
-            >
-              <div class="flex items-center text-golden">
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
               </div>
               <div
-                class="font-medium text-[18px] text-dark-secondary sm:text-[16px] leading-[30.6px] sm:leading-[26px]"
+                class="testimonial-card mb-[30px] p-10 flex flex-col gap-6 shadow-custom rounded-lg bg-white transition-shadow duration-300 ease-in-out hover:shadow-custom-hover break-inside-avoid-column"
               >
-                "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel
-                augue laoreet rutrum faucibus dolor auctor. Nullam quis risus
-                eget porta ac consectetur vestibulum. Donec sed odio dui
-                consectetur adipiscing elit."
-              </div>
-              <div class="flex items-center gap-5">
-                <div
-                  class="rounded-full max-w-[70px] aspect-square overflow-hidden"
+                <div class="testimonial-card-star-wrapper flex text-golden">
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                </div>
+                <blockquote
+                  class="testimonial-card-quote font-medium text-lg leading-relaxed text-dark-secondary"
                 >
-                  <img
-                    src="assets/images/person3.jpg"
-                    alt="Person 3"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
-                </div>
-                <div class="flex flex-col gap-[10px]">
-                  <div class="font-semibold text-[19px] text-dark">
-                    Nikolas Brooten
+                  “Curabitur blandit tempus porttitor. Vivamus sagittis lacus
+                  vel augue laoreet rutrum faucibus dolor auctor. Nullam quis
+                  risus eget porta ac consectetur vestibulum. Donec sed odio dui
+                  consectetur adipiscing elit.”
+                </blockquote>
+                <div class="testimonial-card-author flex items-center gap-5">
+                  <div
+                    class="w-[70px] aspect-square rounded-full overflow-hidden"
+                  >
+                    <img
+                      src="assets/images/person3.jpg"
+                      alt="Person 3"
+                      class="w-full h-full object-cover"
+                    />
                   </div>
-                  <div class="font-medium text-[17px] text-light-secondary">
-                    Sales Manager
+                  <div class="flex flex-col gap-2">
+                    <div class="font-semibold text-lg text-dark">
+                      Nikolas Brooten
+                    </div>
+                    <div class="font-medium text-[17px] text-light-secondary">
+                      Sales Manager
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div
-              class="flex flex-col gap-[25px] bg-white mb-[30px] p-5 sm:p-[30px] rounded-lg break-inside-avoid card"
-            >
-              <div class="flex items-center text-golden">
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
-                <span class="material-symbols-outlined">star_rate</span>
               </div>
               <div
-                class="font-medium text-[18px] text-dark-secondary sm:text-[16px] leading-[30.6px] sm:leading-[26px]"
+                class="testimonial-card mb-[30px] p-10 flex flex-col gap-6 shadow-custom rounded-lg bg-white transition-shadow duration-300 ease-in-out hover:shadow-custom-hover break-inside-avoid-column"
               >
-                "Maecenas sed diam eget risus varius blandit sit amet non magna.
-                Cum sociis natoque penatibus magnis dis montes, nascetur
-                ridiculus mus. Donec sed odio dui. Nulla vitae elit libero."
-              </div>
-              <div class="flex items-center gap-5">
-                <div
-                  class="rounded-full max-w-[70px] aspect-square overflow-hidden"
-                >
-                  <img
-                    src="assets/images/person6.jpg"
-                    alt="Person 6"
-                    class="block w-full max-w-full h-full object-cover"
-                  />
+                <div class="testimonial-card-star-wrapper flex text-golden">
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
+                  <span class="material-symbols-outlined">star_rate</span>
                 </div>
-                <div class="flex flex-col gap-[10px]">
-                  <div class="font-semibold text-[19px] text-dark">
-                    Jackie Sanders
+                <blockquote
+                  class="testimonial-card-quote font-medium text-lg leading-relaxed text-dark-secondary"
+                >
+                  “Maecenas sed diam eget risus varius blandit sit amet non
+                  magna. Cum sociis natoque penatibus magnis dis montes,
+                  nascetur ridiculus mus. Donec sed odio dui. Nulla vitae elit
+                  libero.”
+                </blockquote>
+                <div class="testimonial-card-author flex items-center gap-5">
+                  <div
+                    class="w-[70px] aspect-square rounded-full overflow-hidden"
+                  >
+                    <img
+                      src="assets/images/person6.jpg"
+                      alt="Person 6"
+                      class="w-full h-full object-cover"
+                    />
                   </div>
-                  <div class="font-medium text-[17px] text-light-secondary">
-                    Investment Planner
+                  <div class="flex flex-col gap-2">
+                    <div class="font-semibold text-lg text-dark">
+                      Jackie Sanders
+                    </div>
+                    <div class="font-medium text-[17px] text-light-secondary">
+                      Investment Planner
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1488,55 +1322,53 @@
         </div>
       </section>
 
-      <!-- FAQ Section -->
-      <section class="relative py-10 sm:py-16 lg:py-20">
-        <div class="mx-auto px-5 max-w-[1320px]">
+      <section class="faq-section relative py-16 md:py-20">
+        <div class="max-w-[1320px] mx-auto px-5">
           <div
-            class="gap-8 sm:gap-12 lg:gap-[50px] grid grid-cols-1 lg:grid-cols-2 mb-10 sm:mb-16 lg:mb-20"
+            class="faq-wrapper grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 mb-16 md:mb-20"
           >
             <div
-              class="flex flex-col items-center lg:items-start gap-[15px] lg:text-left text-center"
+              class="section-head flex flex-col gap-4 text-center lg:text-left items-center lg:items-start"
             >
-              <p class="font-semibold text-primary uppercase">FAQ</p>
+              <p class="section-subtitle font-semibold uppercase text-primary">
+                FAQ
+              </p>
               <h2
-                class="max-w-[780px] font-semibold text-[24px] text-dark sm:text-[32px] md:text-[36px] lg:text-[42px]"
+                class="section-title font-semibold text-3xl md:text-4xl max-w-3xl text-dark"
               >
                 If you don't see an answer to your question, you can send us an
                 email from our contact form.
               </h2>
               <p
-                class="font-medium text-[17px] text-dark-secondary sm:text-[16px] leading-[28.9px]"
+                class="section-desc font-medium text-[17px] leading-loose text-dark-secondary"
               >
                 Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
                 eget lacinia odio sem nec elit. Nullam quis risus eget urna
                 mollis ornare.
               </p>
               <button
-                class="bg-primary hover:shadow-button px-5 py-[15px] border border-transparent rounded-[50px] w-fit font-semibold text-[17px] text-light transition-all duration-300 cursor-pointer"
+                class="button--primary border border-transparent cursor-pointer px-5 py-[15px] rounded-full text-[17px] font-semibold w-fit transition-shadow duration-300 ease-in-out bg-primary text-light hover:shadow-primary"
               >
                 ALL FAQ
               </button>
             </div>
-            <div class="flex flex-col gap-[25px] sm:gap-[15px]">
+            <div class="faq-cards flex flex-col gap-6">
               <div
-                class="flex items-start gap-[15px] bg-white p-5 sm:p-[15px] rounded-lg outline-none transition-all duration-300 cursor-pointer card faq-card"
-                tabindex="0"
-                role="button"
-                aria-expanded="false"
+                class="faq-card group p-5 flex items-start gap-4 cursor-pointer transition-all duration-300 rounded-lg outline-none bg-white shadow-custom hover:shadow-custom-hover focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
               >
-                <div
-                  class="flex items-center w-fit h-[10px] transition-transform translate-y-[7px] duration-300 faq-icon"
-                >
-                  <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
+                <div class="w-fit h-2.5 transform translate-y-2">
+                  <img
+                    class="faq-card-icon transition-transform duration-300 group-[.active]:rotate-180"
+                    src="assets/svg/dropdown.svg"
+                    alt="Dropdown Icon"
+                  />
                 </div>
-                <div class="flex-1">
-                  <h3
-                    class="font-semibold text-[18px] text-dark sm:text-[16px] faq-question"
-                  >
+                <div class="faq-card-content flex-1">
+                  <h3 class="faq-card-question font-semibold text-lg text-dark">
                     How do I get my subscription receipt?
                   </h3>
                   <p
-                    class="max-h-0 overflow-hidden text-[16px] text-dark-secondary sm:text-[15px] leading-[26px] sm:leading-[24px] transition-all duration-300 faq-answer"
+                    class="faq-card-answer text-base leading-relaxed text-dark-secondary max-h-0 opacity-0 overflow-hidden transition-all duration-400 ease-in-out group-[.active]:max-h-[200px] group-[.active]:opacity-100 group-[.active]:pt-2.5"
                   >
                     Aenean lacinia bibendum nulla sed consectetur. Cras justo
                     odio, dapibus ac facilisis in, egestas eget quam. Donec sed
@@ -1546,24 +1378,21 @@
                 </div>
               </div>
               <div
-                class="flex items-start gap-[15px] bg-white p-5 sm:p-[15px] rounded-lg outline-none transition-all duration-300 cursor-pointer card faq-card"
-                tabindex="0"
-                role="button"
-                aria-expanded="false"
+                class="faq-card group p-5 flex items-start gap-4 cursor-pointer transition-all duration-300 rounded-lg outline-none bg-white shadow-custom hover:shadow-custom-hover focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
               >
-                <div
-                  class="flex items-center w-fit h-[10px] transition-transform translate-y-[7px] duration-300 faq-icon"
-                >
-                  <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
+                <div class="w-fit h-2.5 transform translate-y-2">
+                  <img
+                    class="faq-card-icon transition-transform duration-300 group-[.active]:rotate-180"
+                    src="assets/svg/dropdown.svg"
+                    alt="Dropdown Icon"
+                  />
                 </div>
-                <div class="flex-1">
-                  <h3
-                    class="font-semibold text-[18px] text-dark sm:text-[16px] faq-question"
-                  >
+                <div class="faq-card-content flex-1">
+                  <h3 class="faq-card-question font-semibold text-lg text-dark">
                     Are there any discounts for people in need?
                   </h3>
                   <p
-                    class="max-h-0 overflow-hidden text-[16px] text-dark-secondary sm:text-[15px] leading-[26px] sm:leading-[24px] transition-all duration-300 faq-answer"
+                    class="faq-card-answer text-base leading-relaxed text-dark-secondary max-h-0 opacity-0 overflow-hidden transition-all duration-400 ease-in-out group-[.active]:max-h-[200px] group-[.active]:opacity-100 group-[.active]:pt-2.5"
                   >
                     Aenean lacinia bibendum nulla sed consectetur. Cras justo
                     odio, dapibus ac facilisis in, egestas eget quam. Donec sed
@@ -1573,24 +1402,21 @@
                 </div>
               </div>
               <div
-                class="flex items-start gap-[15px] bg-white p-5 sm:p-[15px] rounded-lg outline-none transition-all duration-300 cursor-pointer card faq-card"
-                tabindex="0"
-                role="button"
-                aria-expanded="false"
+                class="faq-card group p-5 flex items-start gap-4 cursor-pointer transition-all duration-300 rounded-lg outline-none bg-white shadow-custom hover:shadow-custom-hover focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
               >
-                <div
-                  class="flex items-center w-fit h-[10px] transition-transform translate-y-[7px] duration-300 faq-icon"
-                >
-                  <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
+                <div class="w-fit h-2.5 transform translate-y-2">
+                  <img
+                    class="faq-card-icon transition-transform duration-300 group-[.active]:rotate-180"
+                    src="assets/svg/dropdown.svg"
+                    alt="Dropdown Icon"
+                  />
                 </div>
-                <div class="flex-1">
-                  <h3
-                    class="font-semibold text-[18px] text-dark sm:text-[16px] faq-question"
-                  >
+                <div class="faq-card-content flex-1">
+                  <h3 class="faq-card-question font-semibold text-lg text-dark">
                     Do you offer a free trial edit?
                   </h3>
                   <p
-                    class="max-h-0 overflow-hidden text-[16px] text-dark-secondary sm:text-[15px] leading-[26px] sm:leading-[24px] transition-all duration-300 faq-answer"
+                    class="faq-card-answer text-base leading-relaxed text-dark-secondary max-h-0 opacity-0 overflow-hidden transition-all duration-400 ease-in-out group-[.active]:max-h-[200px] group-[.active]:opacity-100 group-[.active]:pt-2.5"
                   >
                     Aenean lacinia bibendum nulla sed consectetur. Cras justo
                     odio, dapibus ac facilisis in, egestas eget quam. Donec sed
@@ -1600,24 +1426,21 @@
                 </div>
               </div>
               <div
-                class="flex items-start gap-[15px] bg-white p-5 sm:p-[15px] rounded-lg outline-none transition-all duration-300 cursor-pointer card faq-card"
-                tabindex="0"
-                role="button"
-                aria-expanded="false"
+                class="faq-card group p-5 flex items-start gap-4 cursor-pointer transition-all duration-300 rounded-lg outline-none bg-white shadow-custom hover:shadow-custom-hover focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
               >
-                <div
-                  class="flex items-center w-fit h-[10px] transition-transform translate-y-[7px] duration-300 faq-icon"
-                >
-                  <img src="assets/svg/dropdown.svg" alt="Dropdown Icon" />
+                <div class="w-fit h-2.5 transform translate-y-2">
+                  <img
+                    class="faq-card-icon transition-transform duration-300 group-[.active]:rotate-180"
+                    src="assets/svg/dropdown.svg"
+                    alt="Dropdown Icon"
+                  />
                 </div>
-                <div class="flex-1">
-                  <h3
-                    class="font-semibold text-[18px] text-dark sm:text-[16px] faq-question"
-                  >
+                <div class="faq-card-content flex-1">
+                  <h3 class="faq-card-question font-semibold text-lg text-dark">
                     How do I reset my Account password?
                   </h3>
                   <p
-                    class="max-h-0 overflow-hidden text-[16px] text-dark-secondary sm:text-[15px] leading-[26px] sm:leading-[24px] transition-all duration-300 faq-answer"
+                    class="faq-card-answer text-base leading-relaxed text-dark-secondary max-h-0 opacity-0 overflow-hidden transition-all duration-400 ease-in-out group-[.active]:max-h-[200px] group-[.active]:opacity-100 group-[.active]:pt-2.5"
                   >
                     Aenean lacinia bibendum nulla sed consectetur. Cras justo
                     odio, dapibus ac facilisis in, egestas eget quam. Donec sed
@@ -1629,17 +1452,16 @@
             </div>
           </div>
         </div>
-        <div class="bottom-0 -z-10 absolute w-full max-h-[120px]">
+        <div class="absolute w-full bottom-0 max-h-[120px] -z-10">
           <img
             src="assets/svg/decoration3.svg"
             alt="Decoration image 4"
-            class="block w-full max-w-full h-full object-cover"
+            class="w-full h-full object-cover"
           />
         </div>
       </section>
     </main>
   </body>
 
-  <!-- Scripts -->
   <script src="js/script.js"></script>
 </html>
